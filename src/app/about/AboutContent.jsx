@@ -200,12 +200,12 @@ export default function AboutContent() {
               <div className="col-span-full text-center py-12">
                 <div className="w-8 h-8 border-4 border-brand-200 border-t-brand-600 rounded-full animate-spin mx-auto" />
               </div>
-            ) : team.length === 0 ? (
+            ) : (team || []).length === 0 ? (
               <div className="col-span-full text-center py-12 text-dark-500">
                 No team members available yet.
               </div>
             ) : (
-              team.map((member) => (
+              (team || []).map((member) => (
                 <StaggerItem key={member.id || member.name}>
                   <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-dark-100 card-hover">
                     {/* Avatar Placeholder */}

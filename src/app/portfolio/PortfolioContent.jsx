@@ -51,12 +51,12 @@ export default function PortfolioContent() {
               <div className="col-span-full text-center py-12">
                 <div className="w-8 h-8 border-4 border-brand-200 border-t-brand-600 rounded-full animate-spin mx-auto" />
               </div>
-            ) : projects.length === 0 ? (
+            ) : (projects || []).length === 0 ? (
               <div className="col-span-full text-center py-12 text-dark-500">
                 No projects available yet.
               </div>
             ) : (
-              projects.map((project) => (
+              (projects || []).map((project) => (
                 <StaggerItem key={project.id || project.slug}>
                   <ProjectCard project={project} />
                 </StaggerItem>

@@ -218,12 +218,12 @@ export default function HomePage() {
               <div className="col-span-full text-center py-12">
                 <div className="w-8 h-8 border-4 border-brand-200 border-t-brand-600 rounded-full animate-spin mx-auto" />
               </div>
-            ) : services.length === 0 ? (
+            ) : (services || []).length === 0 ? (
               <div className="col-span-full text-center py-12 text-dark-500">
                 No services available yet.
               </div>
             ) : (
-              services.slice(0, 6).map((service, i) => (
+              (services || []).slice(0, 6).map((service, i) => (
                 <StaggerItem key={service.id || i}>
                   <ServiceCard service={service} index={i} />
                 </StaggerItem>
@@ -263,12 +263,12 @@ export default function HomePage() {
               <div className="col-span-full text-center py-12">
                 <div className="w-8 h-8 border-4 border-brand-200 border-t-brand-600 rounded-full animate-spin mx-auto" />
               </div>
-            ) : projects.length === 0 ? (
+            ) : (projects || []).length === 0 ? (
               <div className="col-span-full text-center py-12 text-dark-500">
                 No projects available yet.
               </div>
             ) : (
-              projects.slice(0, 4).map((project) => (
+              (projects || []).slice(0, 4).map((project) => (
                 <StaggerItem key={project.id || project.slug}>
                   <ProjectCard project={project} />
                 </StaggerItem>
@@ -327,12 +327,12 @@ export default function HomePage() {
               <div className="col-span-full text-center py-12">
                 <div className="w-8 h-8 border-4 border-brand-200 border-t-brand-600 rounded-full animate-spin mx-auto" />
               </div>
-            ) : testimonials.length === 0 ? (
+            ) : (testimonials || []).length === 0 ? (
               <div className="col-span-full text-center py-12 text-dark-500">
                 No testimonials available yet.
               </div>
             ) : (
-              testimonials.slice(0, 4).map((t, i) => (
+              (testimonials || []).slice(0, 4).map((t, i) => (
                 <StaggerItem key={t.id || i}>
                   <TestimonialCard testimonial={t} />
                 </StaggerItem>

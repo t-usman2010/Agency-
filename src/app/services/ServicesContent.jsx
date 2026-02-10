@@ -49,12 +49,12 @@ export default function ServicesContent() {
             <div className="text-center py-12">
               <div className="w-8 h-8 border-4 border-brand-200 border-t-brand-600 rounded-full animate-spin mx-auto" />
             </div>
-          ) : services.length === 0 ? (
+          ) : (services || []).length === 0 ? (
             <div className="text-center py-12 text-dark-500">
               No services available yet.
             </div>
           ) : (
-            services.map((service, index) => {
+            (services || []).map((service, index) => {
               const isEven = index % 2 === 0;
               return (
                 <div

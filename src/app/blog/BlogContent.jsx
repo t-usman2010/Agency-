@@ -62,7 +62,7 @@ export default function BlogContent() {
       <section className="section-padding bg-dark-50">
         <div className="container-max">
           <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.1}>
-            {posts.slice(1).map((post) => (
+            {(posts || []).slice(1).map((post) => (
               <StaggerItem key={post.slug}>
                 <Link href={`/blog/${post.slug}`} className="group block h-full">
                   <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-dark-100 card-hover flex flex-col h-full">

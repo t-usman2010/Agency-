@@ -71,12 +71,12 @@ export default function PricingContent() {
               <div className="col-span-full text-center py-12">
                 <div className="w-8 h-8 border-4 border-brand-200 border-t-brand-600 rounded-full animate-spin mx-auto" />
               </div>
-            ) : packages.length === 0 ? (
+            ) : (packages || []).length === 0 ? (
               <div className="col-span-full text-center py-12 text-dark-500">
                 No pricing packages available yet.
               </div>
             ) : (
-              packages.map((pkg) => (
+              (packages || []).map((pkg) => (
                 <StaggerItem key={pkg.id || pkg.name}>
                   <div
                     className={`relative bg-white rounded-2xl p-6 sm:p-8 shadow-sm border flex flex-col h-full ${
