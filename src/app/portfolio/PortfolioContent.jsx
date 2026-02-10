@@ -10,14 +10,25 @@ import { HiArrowRight } from 'react-icons/hi2';
 export default function PortfolioContent() {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function fetchProjects() {
       try {
-        const data = await fetch('/api/admin/projects').then((r) => r.ok ? r.json() : []).catch(() => []);
+        const response = await fetch('/api/admin/projects');
+        if (!response.ok) {
+          const errorData = await response.json().catch(() => ({}));
+          console.error('API Error:', response.status, errorData);
+          setError(errorData.error || `API returned ${response.status}`);
+          setProjects([]);
+          return;
+        }
+        const data = await response.json();
         setProjects(Array.isArray(data) ? data : []);
       } catch (err) {
         console.error('Error fetching projects:', err);
+        setError(err.message);
+        setProjects([]);
       } finally {
         setLoading(false);
       }
@@ -50,6 +61,12 @@ export default function PortfolioContent() {
             {loading ? (
               <div className="col-span-full text-center py-12">
                 <div className="w-8 h-8 border-4 border-brand-200 border-t-brand-600 rounded-full animate-spin mx-auto" />
+              </div>
+            ) : error ? (
+              <div className="col-span-full text-center py-12">
+                <div className="text-red-600 font-semibold mb-2">Error loading projects</div>
+                <div className="text-dark-500 text-sm">{error}</div>
+                <div className="text-dark-400 text-xs mt-2">Check browser console for details</div>
               </div>
             ) : (projects || []).length === 0 ? (
               <div className="col-span-full text-center py-12 text-dark-500">
