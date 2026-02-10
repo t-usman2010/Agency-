@@ -9,7 +9,7 @@ export default function Accordion({ items }) {
 
   return (
     <div className="space-y-3">
-      {items.map((item, index) => (
+      {(items || []).map((item, index) => (
         <div
           key={index}
           className="border border-dark-100 rounded-xl overflow-hidden bg-white"

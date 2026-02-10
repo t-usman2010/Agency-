@@ -23,19 +23,19 @@ const ICON_MAP = {
 
 export default function ServiceCard({ service, index }) {
   // Handle icon - can be a component (from data.js) or a string name (from Firestore)
-  const Icon = typeof service.icon === 'string' 
+  const Icon = typeof service?.icon === 'string' 
     ? (ICON_MAP[service.icon] || HiOutlineSquare3Stack3D)
-    : (service.icon || HiOutlineSquare3Stack3D);
+    : (service?.icon || HiOutlineSquare3Stack3D);
 
   return (
     <div className="group bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-dark-100 card-hover flex flex-col h-full">
       <div className="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center mb-5 group-hover:bg-brand-600 transition-colors duration-300">
         <Icon className="w-6 h-6 text-brand-600 group-hover:text-white transition-colors duration-300" />
       </div>
-      <h3 className="text-xl font-bold text-dark-900 mb-3">{service.title}</h3>
-      <p className="text-dark-600 text-sm leading-relaxed flex-1 mb-5">{service.short}</p>
+      <h3 className="text-xl font-bold text-dark-900 mb-3">{service?.title}</h3>
+      <p className="text-dark-600 text-sm leading-relaxed flex-1 mb-5">{service?.short}</p>
       <Link
-        href={`/services#${service.slug}`}
+        href={`/services#${service?.slug}`}
         className="inline-flex items-center gap-2 text-sm font-medium text-brand-600 hover:text-brand-700 transition-colors group/link"
       >
         Learn more
