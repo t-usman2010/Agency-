@@ -1,35 +1,37 @@
-import { initializeApp, getApps, cert, applicationDefault } from 'firebase-admin/app';
+import { initializeApp, getApps, cert } from 'firebase-admin/app';
 import { getFirestore } from 'firebase-admin/firestore';
 
 function getAdminApp() {
   if (getApps().length > 0) return getApps()[0];
 
-  // Option 1: Use service account key from env variable
-  const serviceAccount = process.env.FIREBASE_SERVICE_ACCOUNT_KEY
-    ? JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY)
-    : null;
+  try {
+    // Parse service account key from environment variable
+    const serviceAccountKey = process.env.FIREBASE_SERVICE_ACCOUNT_KEY;
+    
+    if (!serviceAccountKey) {
+      console.error('FIREBASE_SERVICE_ACCOUNT_KEY environment variable is not set');
+      throw new Error('Firebase service account key is required');
+    }
 
-  if (serviceAccount) {
+    const serviceAccount = JSON.parse(serviceAccountKey);
+
     return initializeApp({
       credential: cert(serviceAccount),
       projectId: serviceAccount.project_id,
     });
+  } catch (error) {
+    console.error('Failed to initialize Firebase Admin SDK:', error.message);
+    throw error;
   }
-
-  // Option 2: Use service account key file
-  const keyFilePath = process.env.GOOGLE_APPLICATION_CREDENTIALS;
-  if (keyFilePath) {
-    return initializeApp({
-      credential: applicationDefault(),
-      projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-    });
-  }
-
-  // Option 3: Initialize with project ID only (for environments with default credentials)
-  return initializeApp({
-    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  });
 }
 
-const app = getAdminApp();
-export const adminDb = getFirestore(app);
+let adminDb;
+try {
+  const app = getAdminApp();
+  adminDb = getFirestore(app);
+} catch (error) {
+  console.error('Firebase Admin initialization failed:', error.message);
+  adminDb = null;
+}
+
+export { adminDb };
