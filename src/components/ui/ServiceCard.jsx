@@ -1,8 +1,31 @@
 import Link from 'next/link';
 import { HiArrowRight } from 'react-icons/hi2';
+import {
+  HiOutlineCodeBracket,
+  HiOutlineDevicePhoneMobile,
+  HiOutlineRocketLaunch,
+  HiOutlinePaintBrush,
+  HiOutlineMagnifyingGlass,
+  HiOutlineWrenchScrewdriver,
+  HiOutlineSquare3Stack3D,
+} from 'react-icons/hi2';
+
+// Icon mapping for services from Firestore
+const ICON_MAP = {
+  HiOutlineCodeBracket,
+  HiOutlineDevicePhoneMobile,
+  HiOutlineRocketLaunch,
+  HiOutlinePaintBrush,
+  HiOutlineMagnifyingGlass,
+  HiOutlineWrenchScrewdriver,
+  HiOutlineSquare3Stack3D,
+};
 
 export default function ServiceCard({ service, index }) {
-  const Icon = service.icon;
+  // Handle icon - can be a component (from data.js) or a string name (from Firestore)
+  const Icon = typeof service.icon === 'string' 
+    ? (ICON_MAP[service.icon] || HiOutlineSquare3Stack3D)
+    : (service.icon || HiOutlineSquare3Stack3D);
 
   return (
     <div className="group bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-dark-100 card-hover flex flex-col h-full">

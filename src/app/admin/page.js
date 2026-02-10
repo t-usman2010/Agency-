@@ -13,7 +13,6 @@ import ProjectManager from '@/components/admin/ProjectManager';
 import PricingManager from '@/components/admin/PricingManager';
 import {
   HiOutlineInbox,
-  HiOutlineDocumentText,
   HiOutlineFolderOpen,
   HiArrowRightOnRectangle,
   HiEnvelope,

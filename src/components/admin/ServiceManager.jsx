@@ -10,6 +10,7 @@ export default function ServiceManager({ services, onRefresh }) {
     title: '',
     description: '',
     features: '',
+    icon: 'HiOutlineSquare3Stack3D',
     order: 0,
   });
 
@@ -48,7 +49,7 @@ export default function ServiceManager({ services, onRefresh }) {
   }
 
   function resetForm() {
-    setFormData({ title: '', description: '', features: '', order: 0 });
+    setFormData({ title: '', description: '', features: '', icon: 'HiOutlineSquare3Stack3D', order: 0 });
     setIsCreating(false);
     setEditingId(null);
   }
@@ -58,6 +59,7 @@ export default function ServiceManager({ services, onRefresh }) {
       title: service.title,
       description: service.description,
       features: service.features.join('\n'),
+      icon: service.icon || 'HiOutlineSquare3Stack3D',
       order: service.order || 0,
     });
     setEditingId(service.id);
@@ -104,6 +106,22 @@ export default function ServiceManager({ services, onRefresh }) {
                 onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                 className="w-full px-3 py-2 rounded-lg border border-dark-200 text-sm"
               />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-dark-900 mb-1">Icon</label>
+              <select
+                value={formData.icon}
+                onChange={(e) => setFormData({ ...formData, icon: e.target.value })}
+                className="w-full px-3 py-2 rounded-lg border border-dark-200 text-sm"
+              >
+                <option value="HiOutlineCodeBracket">Code Bracket</option>
+                <option value="HiOutlineRocketLaunch">Rocket Launch</option>
+                <option value="HiOutlinePaintBrush">Paint Brush</option>
+                <option value="HiOutlineDevicePhoneMobile">Mobile Device</option>
+                <option value="HiOutlineMagnifyingGlass">Magnifying Glass</option>
+                <option value="HiOutlineWrenchScrewdriver">Wrench</option>
+                <option value="HiOutlineSquare3Stack3D">Stack</option>
+              </select>
             </div>
             <div>
               <label className="block text-sm font-medium text-dark-900 mb-1">
