@@ -23,7 +23,7 @@ export default function ProjectCard({ project }) {
           </h3>
           <p className="text-dark-600 text-sm line-clamp-2">{project?.problem}</p>
           <div className="flex flex-wrap gap-2 mt-4">
-            {(project.techStack || []).slice(0, 4).map((tech) => (
+            {((project?.techStack || project?.technologies) || []).slice(0, 4).map((tech) => (
               <span
                 key={tech}
                 className="px-2.5 py-1 bg-dark-50 text-dark-600 text-xs rounded-md font-medium"
@@ -31,9 +31,9 @@ export default function ProjectCard({ project }) {
                 {tech}
               </span>
             ))}
-            {(project.techStack || []).length > 4 && (
+            {((project?.techStack || project?.technologies) || []).length > 4 && (
               <span className="px-2.5 py-1 bg-dark-50 text-dark-500 text-xs rounded-md">
-                +{(project.techStack || []).length - 4}
+                +{((project?.techStack || project?.technologies) || []).length - 4}
               </span>
             )}
           </div>

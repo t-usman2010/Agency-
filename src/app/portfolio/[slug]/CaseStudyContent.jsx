@@ -52,13 +52,13 @@ export default function CaseStudyContent({ project }) {
               <h2 className="text-sm font-semibold tracking-widest uppercase text-accent-coral mb-3">
                 The Challenge
               </h2>
-              <p className="text-dark-700 text-lg leading-relaxed">{project.problem}</p>
+              <p className="text-dark-700 text-lg leading-relaxed">{project?.problem || project?.challenge || project?.description}</p>
             </AnimatedSection>
             <AnimatedSection variant="fadeRight" delay={0.1}>
               <h2 className="text-sm font-semibold tracking-widest uppercase text-accent-emerald mb-3">
                 Our Solution
               </h2>
-              <p className="text-dark-700 text-lg leading-relaxed">{project.solution}</p>
+              <p className="text-dark-700 text-lg leading-relaxed">{project?.solution}</p>
             </AnimatedSection>
           </div>
         </div>
@@ -92,7 +92,7 @@ export default function CaseStudyContent({ project }) {
           <AnimatedSection>
             <h2 className="section-title text-center mb-8">Tech Stack</h2>
             <div className="flex flex-wrap justify-center gap-3">
-              {project.techStack.map((tech) => (
+              {((project.techStack || project.technologies) || []).map((tech) => (
                 <span
                   key={tech}
                   className="px-4 py-2 bg-white rounded-lg border border-dark-100 text-dark-700 text-sm font-medium"
