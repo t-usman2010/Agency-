@@ -7,11 +7,11 @@ import {
   HiOutlineWrenchScrewdriver,
 } from 'react-icons/hi2';
 
-export const AGENCY_NAME = 'TriForge Studio';
-export const AGENCY_TAGLINE = 'We forge digital experiences that drive growth.';
-export const AGENCY_EMAIL = 'hello@triforgestudio.com';
-export const AGENCY_PHONE = '+1 (415) 938-2740';
-export const AGENCY_ADDRESS = '548 Market Street, Suite 420, San Francisco, CA 94104';
+export const AGENCY_NAME = 'WebNest Studio';
+export const AGENCY_TAGLINE = 'We build digital experiences that drive growth.';
+export const AGENCY_EMAIL = 't.usman36412@gmail.com';
+export const AGENCY_PHONE = '+92 3211113360';
+export const AGENCY_ADDRESS = 'Islamabad, Pakistan';
 
 export const NAV_LINKS = [
   { label: 'Home', href: '/' },
@@ -166,7 +166,7 @@ export const PORTFOLIO = [
       { metric: 'Client Retention', value: '+34%', description: 'After dashboard launch' },
     ],
     testimonial: {
-      text: 'TriForge delivered exactly what we needed — a fast, beautiful dashboard our clients love. The real-time capabilities exceeded our expectations.',
+      text: 'WebNest delivered exactly what we needed — a fast, beautiful dashboard our clients love. The real-time capabilities exceeded our expectations.',
       author: 'James Wright',
       role: 'CTO, DataSync Inc.',
     },
@@ -214,7 +214,7 @@ export const PORTFOLIO = [
       { metric: 'Platform Uptime', value: '99.97%', description: 'Over 12-month period' },
     ],
     testimonial: {
-      text: 'TriForge understood our vision and built a platform that scales beautifully. The student feedback has been overwhelmingly positive.',
+      text: 'WebNest understood our vision and built a platform that scales beautifully. The student feedback has been overwhelmingly positive.',
       author: 'Dr. Rajan Patel',
       role: 'CEO, NexaLearn Education',
     },
@@ -238,7 +238,7 @@ export const PORTFOLIO = [
       { metric: 'AUM Tracked', value: '$120M+', description: 'Assets under management' },
     ],
     testimonial: {
-      text: 'Security was non-negotiable for us. TriForge built a platform that meets institutional standards while being remarkably easy to use.',
+      text: 'Security was non-negotiable for us. WebNest built a platform that meets institutional standards while being remarkably easy to use.',
       author: 'Sarah Kim',
       role: 'COO, Finova Wealth',
     },
@@ -247,13 +247,13 @@ export const PORTFOLIO = [
 
 export const TESTIMONIALS = [
   {
-    text: 'TriForge transformed our outdated platform into a modern, high-performing application. Their attention to detail and communication throughout the project was outstanding.',
+    text: 'WebNest transformed our outdated platform into a modern, high-performing application. Their attention to detail and communication throughout the project was outstanding.',
     author: 'James Wright',
     role: 'CTO, DataSync Inc.',
     rating: 5,
   },
   {
-    text: 'Working with the TriForge team felt like having an in-house dev team. They understood our brand instantly and delivered beyond our expectations.',
+    text: 'Working with the WebNest team felt like having an in-house dev team. They understood our brand instantly and delivered beyond our expectations.',
     author: 'Mia Torres',
     role: 'Founder, Verdant Living Co.',
     rating: 5,
@@ -265,7 +265,7 @@ export const TESTIMONIALS = [
     rating: 5,
   },
   {
-    text: 'TriForge doesn\'t just build — they think. Their strategic input on UX helped us increase conversions by 40%.',
+    text: 'WebNest doesn\'t just build — they think. Their strategic input on UX helped us increase conversions by 40%.',
     author: 'Dr. Rajan Patel',
     role: 'CEO, NexaLearn Education',
     rating: 5,
@@ -405,7 +405,7 @@ Faster sites convert better. Google rewards speed. Users remember experiences. B
     slug: 'designing-for-conversion-ux-principles',
     title: '7 UX Principles That Actually Drive Conversion',
     excerpt:
-      'Beautiful design means nothing if it doesn\'t convert. These are the research-backed UX principles we apply to every project at TriForge.',
+      'Beautiful design means nothing if it doesn\'t convert. These are the research-backed UX principles we apply to every project at WebNest.',
     category: 'Design',
     author: 'Elena Rossi',
     date: 'January 15, 2026',
@@ -414,7 +414,7 @@ Faster sites convert better. Google rewards speed. Users remember experiences. B
     content: `
 ## Design With Intent
 
-Every pixel should serve a purpose. At TriForge, we don't design for awards — we design for results. Here are seven UX principles that consistently drive higher conversion rates across our projects.
+Every pixel should serve a purpose. At WebNest, we don't design for awards — we design for results. Here are seven UX principles that consistently drive higher conversion rates across our projects.
 
 ### 1. Progressive Disclosure
 
@@ -458,7 +458,7 @@ With 60%+ of web traffic on mobile, designing desktop-first is designing backwar
     content: `
 ## The Serverless Question
 
-At TriForge, we use both Firebase and custom Node.js backends extensively. The decision isn't about which is "better" — it's about which is right for your project, budget, and timeline.
+At WebNest, we use both Firebase and custom Node.js backends extensively. The decision isn't about which is "better" — it's about which is right for your project, budget, and timeline.
 
 ### When Firebase Excels
 
@@ -512,7 +512,7 @@ We deliver design systems, not just mockups. A well-structured Figma library wit
 
 Your brand will live on your website, social media, pitch decks, product UI, and eventually physical materials. Every design decision should consider these touchpoints.
 
-## The TriForge Approach
+## The WebNest Approach
 
 We build brands that look like they belong to companies twice your current size — without the enterprise price tag. It's about smart constraints, not unlimited options.
     `,

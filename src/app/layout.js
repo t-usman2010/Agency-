@@ -18,11 +18,11 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: {
-    default: "TriForge Studio — Web Development & Design Agency",
-    template: "%s | TriForge Studio",
+    default: "WebNest Studio — Web Development & Design Agency",
+    template: "%s | WebNest Studio",
   },
   description:
-    "TriForge Studio is a boutique web development agency specializing in custom web applications, SaaS MVPs, UI/UX design, and brand identity. Built by a team of MERN stack developers and a graphic designer.",
+    "WebNest Studio is a boutique web development agency specializing in custom web applications, SaaS MVPs, UI/UX design, and brand identity. Built by a team of MERN stack developers and a graphic designer.",
   keywords: [
     "web development agency",
     "MERN stack",
@@ -32,19 +32,19 @@ export const metadata = {
     "branding",
     "custom web applications",
   ],
-  authors: [{ name: "TriForge Studio" }],
+  authors: [{ name: "WebNest Studio" }],
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://triforgestudio.com",
-    siteName: "TriForge Studio",
-    title: "TriForge Studio — Web Development & Design Agency",
+    url: "https://webneststudio.com",
+    siteName: "WebNest Studio",
+    title: "WebNest Studio — Web Development & Design Agency",
     description:
       "Boutique web development agency specializing in custom web apps, SaaS MVPs, UI/UX design, and branding.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "TriForge Studio — Web Development & Design Agency",
+    title: "WebNest Studio — Web Development & Design Agency",
     description:
       "Boutique web development agency specializing in custom web apps, SaaS MVPs, UI/UX design, and branding.",
   },

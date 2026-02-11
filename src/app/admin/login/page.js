@@ -50,7 +50,7 @@ export default function AdminLoginPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full px-4 py-3 rounded-lg border border-dark-200 text-dark-900 text-sm focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all"
-              placeholder="admin@triforgestudio.com"
+              placeholder="admin@webneststudio.com"
             />
           </div>
           <div>

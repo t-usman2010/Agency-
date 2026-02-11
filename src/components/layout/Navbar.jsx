@@ -36,7 +36,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 group" aria-label={AGENCY_NAME}>
           <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-brand-600 flex items-center justify-center group-hover:bg-brand-700 transition-colors">
-            <span className="text-white font-bold text-sm sm:text-base">TF</span>
+            <span className="text-white font-bold text-sm sm:text-base">WN</span>
           </div>
           <span className="font-bold text-lg sm:text-xl text-dark-900 dark:text-white hidden sm:block">
             {AGENCY_NAME}
