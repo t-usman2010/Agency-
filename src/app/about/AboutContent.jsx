@@ -27,16 +27,16 @@ export default function AboutContent() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-28 sm:pt-36 pb-16 sm:pb-20 bg-white">
+      <section className="pt-28 sm:pt-36 pb-16 sm:pb-20 bg-white dark:bg-dark-950">
         <div className="container-max px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <span className="section-label">About Us</span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-dark-900 leading-tight mb-6 max-w-3xl">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-dark-900 dark:text-white leading-tight mb-6 max-w-3xl">
               Three specialists.
               <br />
               <span className="gradient-text">Unlimited possibilities.</span>
             </h1>
-            <p className="text-lg sm:text-xl text-dark-600 max-w-2xl leading-relaxed">
+            <p className="text-lg sm:text-xl text-dark-500 dark:text-dark-400 max-w-2xl leading-relaxed">
               {AGENCY_NAME} is a tight-knit studio of two MERN-stack developers and one
               multidisciplinary designer. We keep our team lean by design — so every
               project gets the full attention of senior-level talent from day one.
@@ -46,7 +46,7 @@ export default function AboutContent() {
       </section>
 
       {/* Mission */}
-      <section className="section-padding bg-dark-50">
+      <section className="section-padding bg-dark-50 dark:bg-dark-900">
         <div className="container-max">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <AnimatedSection>
@@ -55,12 +55,12 @@ export default function AboutContent() {
                 title="We build software that makes a measurable difference"
                 className="mb-0"
               />
-              <p className="text-dark-600 leading-relaxed mt-6">
+              <p className="text-dark-500 dark:text-dark-400 leading-relaxed mt-6">
                 Too many agencies prioritize volume over quality. We founded {AGENCY_NAME}{' '}
                 because we believe the best digital products come from small, focused teams
                 who deeply understand both the technology and the business problem.
               </p>
-              <p className="text-dark-600 leading-relaxed mt-4">
+              <p className="text-dark-500 dark:text-dark-400 leading-relaxed mt-4">
                 Every project we take on receives the same level of strategic thinking,
                 design craft, and engineering rigor — whether it&apos;s a five-page website or
                 a complex SaaS platform. We measure our success by yours.
@@ -104,7 +104,7 @@ export default function AboutContent() {
       </section>
 
       {/* Workflow */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white dark:bg-dark-950">
         <div className="container-max">
           <AnimatedSection>
             <SectionHeader
@@ -163,14 +163,14 @@ export default function AboutContent() {
               },
             ].map((phase) => (
               <StaggerItem key={phase.phase}>
-                <div className="p-6 rounded-2xl border border-dark-100 h-full hover:border-brand-200 transition-colors">
-                  <span className="text-xs font-semibold tracking-widest uppercase text-brand-600 mb-2 block">
+                <div className="p-6 rounded-2xl border border-dark-100 dark:border-dark-800 h-full hover:border-brand-200 dark:hover:border-brand-800 transition-colors bg-white dark:bg-dark-900">
+                  <span className="text-xs font-semibold tracking-widest uppercase text-brand-600 dark:text-brand-400 mb-2 block">
                     {phase.phase}
                   </span>
-                  <h3 className="text-lg font-bold text-dark-900 mb-4">{phase.title}</h3>
+                  <h3 className="text-lg font-bold text-dark-900 dark:text-white mb-4">{phase.title}</h3>
                   <ul className="space-y-2">
                     {phase.details.map((detail) => (
-                      <li key={detail} className="text-dark-600 text-sm flex items-start gap-2">
+                      <li key={detail} className="text-dark-500 dark:text-dark-400 text-sm flex items-start gap-2">
                         <span className="w-1 h-1 rounded-full bg-dark-300 mt-2 shrink-0" />
                         {detail}
                       </li>
@@ -184,7 +184,7 @@ export default function AboutContent() {
       </section>
 
       {/* Team */}
-      <section className="section-padding bg-dark-50">
+      <section className="section-padding bg-dark-50 dark:bg-dark-900">
         <div className="container-max">
           <AnimatedSection>
             <SectionHeader
@@ -201,15 +201,15 @@ export default function AboutContent() {
                 <div className="w-8 h-8 border-4 border-brand-200 border-t-brand-600 rounded-full animate-spin mx-auto" />
               </div>
             ) : (team || []).length === 0 ? (
-              <div className="col-span-full text-center py-12 text-dark-500">
+              <div className="col-span-full text-center py-12 text-dark-500 dark:text-dark-400">
                 No team members available yet.
               </div>
             ) : (
               (team || []).map((member) => (
                 <StaggerItem key={member.id || member.name}>
-                  <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-dark-100 card-hover">
+                  <div className="bg-white dark:bg-dark-900 rounded-2xl border border-dark-100 dark:border-dark-800 shadow-sm dark:shadow-none transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 dark:hover:shadow-dark-950/50 dark:hover:border-dark-700 overflow-hidden">
                     {/* Avatar Placeholder */}
-                    <div className="aspect-[4/3] bg-gradient-to-br from-brand-100 via-brand-50 to-dark-50 flex items-center justify-center">
+                    <div className="aspect-[4/3] bg-gradient-to-br from-brand-100 via-brand-50 to-dark-50 dark:from-brand-950/30 dark:via-dark-800 dark:to-dark-900 flex items-center justify-center">
                       <div className="w-24 h-24 rounded-full bg-brand-600 flex items-center justify-center text-white text-3xl font-bold">
                         {member.name
                           .split(' ')
@@ -218,14 +218,14 @@ export default function AboutContent() {
                       </div>
                     </div>
                     <div className="p-6 sm:p-8">
-                      <h3 className="text-xl font-bold text-dark-900">{member.name}</h3>
-                      <p className="text-brand-600 text-sm font-medium mb-3">{member.role}</p>
-                      <p className="text-dark-600 text-sm leading-relaxed mb-4">{member.bio}</p>
+                      <h3 className="text-xl font-bold text-dark-900 dark:text-white">{member.name}</h3>
+                      <p className="text-brand-600 dark:text-brand-400 text-sm font-medium mb-3">{member.role}</p>
+                      <p className="text-dark-500 dark:text-dark-400 text-sm leading-relaxed mb-4">{member.bio}</p>
                       <div className="flex flex-wrap gap-2">
                         {member.skills?.map((skill) => (
                           <span
                             key={skill}
-                            className="px-2.5 py-1 bg-dark-50 text-dark-600 text-xs rounded-md font-medium"
+                            className="px-2.5 py-1 bg-dark-50 dark:bg-dark-800 text-dark-600 dark:text-dark-300 text-xs rounded-lg font-medium"
                           >
                             {skill}
                           </span>
@@ -241,7 +241,7 @@ export default function AboutContent() {
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white dark:bg-dark-950">
         <div className="container-max text-center">
           <AnimatedSection>
             <h2 className="section-title mb-4">Want to work with us?</h2>

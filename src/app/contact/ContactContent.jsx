@@ -70,15 +70,15 @@ export default function ContactContent() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-28 sm:pt-36 pb-16 sm:pb-20 bg-white">
+      <section className="pt-28 sm:pt-36 pb-16 sm:pb-20 bg-white dark:bg-dark-950">
         <div className="container-max px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <span className="section-label">Contact</span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-dark-900 leading-tight mb-6 max-w-3xl">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-dark-900 dark:text-white leading-tight mb-6 max-w-3xl">
               Let&apos;s build something{' '}
               <span className="gradient-text">remarkable</span>
             </h1>
-            <p className="text-lg sm:text-xl text-dark-600 max-w-2xl leading-relaxed">
+            <p className="text-lg sm:text-xl text-dark-500 dark:text-dark-400 max-w-2xl leading-relaxed">
               Tell us about your project and we&apos;ll get back to you within 24 hours
               with a free initial consultation.
             </p>
@@ -87,7 +87,7 @@ export default function ContactContent() {
       </section>
 
       {/* Form + Info */}
-      <section className="section-padding bg-dark-50">
+      <section className="section-padding bg-dark-50 dark:bg-dark-900">
         <div className="container-max">
           <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
             {/* Contact Info */}
@@ -95,15 +95,15 @@ export default function ContactContent() {
               <AnimatedSection>
                 <div className="space-y-6">
                   <div>
-                    <h3 className="font-semibold text-dark-900 mb-4">Get in touch</h3>
+                    <h3 className="font-semibold text-dark-900 dark:text-white mb-4">Get in touch</h3>
                     <ul className="space-y-4">
                       <li className="flex items-start gap-3">
                         <HiEnvelope className="w-5 h-5 text-brand-600 mt-0.5 shrink-0" />
                         <div>
-                          <p className="text-dark-500 text-xs mb-0.5">Email</p>
+                          <p className="text-dark-500 dark:text-dark-400 text-xs mb-0.5">Email</p>
                           <a
                             href={`mailto:${AGENCY_EMAIL}`}
-                            className="text-dark-900 font-medium text-sm hover:text-brand-600 transition-colors"
+                            className="text-dark-900 dark:text-white font-medium text-sm hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
                           >
                             {AGENCY_EMAIL}
                           </a>
@@ -112,10 +112,10 @@ export default function ContactContent() {
                       <li className="flex items-start gap-3">
                         <HiPhone className="w-5 h-5 text-brand-600 mt-0.5 shrink-0" />
                         <div>
-                          <p className="text-dark-500 text-xs mb-0.5">Phone</p>
+                          <p className="text-dark-500 dark:text-dark-400 text-xs mb-0.5">Phone</p>
                           <a
                             href={`tel:${AGENCY_PHONE.replace(/\s/g, '')}`}
-                            className="text-dark-900 font-medium text-sm hover:text-brand-600 transition-colors"
+                            className="text-dark-900 dark:text-white font-medium text-sm hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
                           >
                             {AGENCY_PHONE}
                           </a>
@@ -124,24 +124,24 @@ export default function ContactContent() {
                       <li className="flex items-start gap-3">
                         <HiMapPin className="w-5 h-5 text-brand-600 mt-0.5 shrink-0" />
                         <div>
-                          <p className="text-dark-500 text-xs mb-0.5">Office</p>
-                          <p className="text-dark-900 font-medium text-sm">{AGENCY_ADDRESS}</p>
+                          <p className="text-dark-500 dark:text-dark-400 text-xs mb-0.5">Office</p>
+                          <p className="text-dark-900 dark:text-white font-medium text-sm">{AGENCY_ADDRESS}</p>
                         </div>
                       </li>
                     </ul>
                   </div>
 
-                  <div className="pt-6 border-t border-dark-200">
-                    <h3 className="font-semibold text-dark-900 mb-2">Response time</h3>
-                    <p className="text-dark-600 text-sm">
+                  <div className="pt-6 border-t border-dark-200 dark:border-dark-700">
+                    <h3 className="font-semibold text-dark-900 dark:text-white mb-2">Response time</h3>
+                    <p className="text-dark-500 dark:text-dark-400 text-sm">
                       We respond to all inquiries within 24 hours during business days. For
                       urgent requests, call us directly.
                     </p>
                   </div>
 
-                  <div className="pt-6 border-t border-dark-200">
-                    <h3 className="font-semibold text-dark-900 mb-2">What happens next?</h3>
-                    <ol className="space-y-2 text-dark-600 text-sm">
+                  <div className="pt-6 border-t border-dark-200 dark:border-dark-700">
+                    <h3 className="font-semibold text-dark-900 dark:text-white mb-2">What happens next?</h3>
+                    <ol className="space-y-2 text-dark-500 dark:text-dark-400 text-sm">
                       <li className="flex gap-2">
                         <span className="font-semibold text-brand-600 shrink-0">1.</span>
                         We review your project details
@@ -164,20 +164,20 @@ export default function ContactContent() {
             <div className="lg:col-span-2">
               <AnimatedSection variant="fadeRight">
                 {status === 'success' ? (
-                  <div className="bg-white rounded-2xl p-8 sm:p-12 border border-dark-100 text-center">
+                  <div className="bg-white dark:bg-dark-900 rounded-2xl border border-dark-100 dark:border-dark-800 shadow-sm dark:shadow-none p-8 sm:p-12 text-center">
                     <div className="w-16 h-16 rounded-full bg-accent-emerald/10 flex items-center justify-center mx-auto mb-6">
                       <HiCheckCircle className="w-8 h-8 text-accent-emerald" />
                     </div>
-                    <h3 className="text-2xl font-bold text-dark-900 mb-3">
+                    <h3 className="text-2xl font-bold text-dark-900 dark:text-white mb-3">
                       Message sent successfully!
                     </h3>
-                    <p className="text-dark-600 mb-6">
+                    <p className="text-dark-500 dark:text-dark-400 mb-6">
                       Thank you for reaching out. We&apos;ll review your project details and
                       get back to you within 24 hours.
                     </p>
                     <button
                       onClick={() => setStatus('idle')}
-                      className="text-brand-600 font-medium text-sm hover:underline"
+                      className="text-brand-600 dark:text-brand-400 font-medium text-sm hover:underline"
                     >
                       Send another message
                     </button>
@@ -185,11 +185,11 @@ export default function ContactContent() {
                 ) : (
                   <form
                     onSubmit={handleSubmit}
-                    className="bg-white rounded-2xl p-6 sm:p-8 border border-dark-100 space-y-6"
+                    className="bg-white dark:bg-dark-900 rounded-2xl border border-dark-100 dark:border-dark-800 shadow-sm dark:shadow-none p-6 sm:p-8 space-y-6"
                   >
                     <div className="grid sm:grid-cols-2 gap-6">
                       <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-dark-900 mb-2">
+                        <label htmlFor="name" className="block text-sm font-medium text-dark-900 dark:text-dark-100 mb-2">
                           Full Name *
                         </label>
                         <input
@@ -199,12 +199,12 @@ export default function ContactContent() {
                           required
                           value={formData.name}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-lg border border-dark-200 text-dark-900 text-sm focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all"
+                          className="input-base"
                           placeholder="John Doe"
                         />
                       </div>
                       <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-dark-900 mb-2">
+                        <label htmlFor="email" className="block text-sm font-medium text-dark-900 dark:text-dark-100 mb-2">
                           Email Address *
                         </label>
                         <input
@@ -214,14 +214,14 @@ export default function ContactContent() {
                           required
                           value={formData.email}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-lg border border-dark-200 text-dark-900 text-sm focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all"
+                          className="input-base"
                           placeholder="john@company.com"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label htmlFor="company" className="block text-sm font-medium text-dark-900 mb-2">
+                      <label htmlFor="company" className="block text-sm font-medium text-dark-900 dark:text-dark-100 mb-2">
                         Company / Organization
                       </label>
                       <input
@@ -230,14 +230,14 @@ export default function ContactContent() {
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-dark-200 text-dark-900 text-sm focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all"
+                        className="input-base"
                         placeholder="Acme Inc."
                       />
                     </div>
 
                     <div className="grid sm:grid-cols-2 gap-6">
                       <div>
-                        <label htmlFor="projectType" className="block text-sm font-medium text-dark-900 mb-2">
+                        <label htmlFor="projectType" className="block text-sm font-medium text-dark-900 dark:text-dark-100 mb-2">
                           Project Type *
                         </label>
                         <select
@@ -246,7 +246,7 @@ export default function ContactContent() {
                           required
                           value={formData.projectType}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-lg border border-dark-200 text-dark-900 text-sm focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all bg-white"
+                          className="input-base"
                         >
                           <option value="">Select a type</option>
                           {PROJECT_TYPES.map((type) => (
@@ -257,7 +257,7 @@ export default function ContactContent() {
                         </select>
                       </div>
                       <div>
-                        <label htmlFor="budget" className="block text-sm font-medium text-dark-900 mb-2">
+                        <label htmlFor="budget" className="block text-sm font-medium text-dark-900 dark:text-dark-100 mb-2">
                           Budget Range
                         </label>
                         <select
@@ -265,7 +265,7 @@ export default function ContactContent() {
                           name="budget"
                           value={formData.budget}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-lg border border-dark-200 text-dark-900 text-sm focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all bg-white"
+                          className="input-base"
                         >
                           <option value="">Select a range</option>
                           {BUDGETS.map((budget) => (
@@ -278,7 +278,7 @@ export default function ContactContent() {
                     </div>
 
                     <div>
-                      <label htmlFor="timeline" className="block text-sm font-medium text-dark-900 mb-2">
+                      <label htmlFor="timeline" className="block text-sm font-medium text-dark-900 dark:text-dark-100 mb-2">
                         Desired Timeline
                       </label>
                       <input
@@ -287,13 +287,13 @@ export default function ContactContent() {
                         name="timeline"
                         value={formData.timeline}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-dark-200 text-dark-900 text-sm focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all"
+                        className="input-base"
                         placeholder="e.g., 6 weeks, Q2 2026, ASAP"
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-dark-900 mb-2">
+                      <label htmlFor="message" className="block text-sm font-medium text-dark-900 dark:text-dark-100 mb-2">
                         Project Details *
                       </label>
                       <textarea
@@ -303,7 +303,7 @@ export default function ContactContent() {
                         rows={5}
                         value={formData.message}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-dark-200 text-dark-900 text-sm focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all resize-y"
+                        className="input-base resize-y"
                         placeholder="Tell us about your project, goals, and any specific requirements..."
                       />
                     </div>

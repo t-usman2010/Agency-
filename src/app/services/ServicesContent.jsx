@@ -26,15 +26,15 @@ export default function ServicesContent() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-28 sm:pt-36 pb-16 sm:pb-20 bg-white">
+      <section className="pt-28 sm:pt-36 pb-16 sm:pb-20 bg-white dark:bg-dark-950">
         <div className="container-max px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <span className="section-label">Our Services</span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-dark-900 leading-tight mb-6 max-w-3xl">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-dark-900 dark:text-white leading-tight mb-6 max-w-3xl">
               Everything you need to{' '}
               <span className="gradient-text">ship great products</span>
             </h1>
-            <p className="text-lg sm:text-xl text-dark-600 max-w-2xl leading-relaxed">
+            <p className="text-lg sm:text-xl text-dark-500 dark:text-dark-400 max-w-2xl leading-relaxed">
               From initial concept to ongoing maintenance, we provide end-to-end digital 
               services that help businesses launch faster, grow smarter, and scale confidently.
             </p>
@@ -43,14 +43,14 @@ export default function ServicesContent() {
       </section>
 
       {/* Services Detail */}
-      <section className="section-padding bg-dark-50">
+      <section className="section-padding bg-dark-50 dark:bg-dark-900">
         <div className="container-max space-y-16 lg:space-y-24">
           {loading ? (
             <div className="text-center py-12">
               <div className="w-8 h-8 border-4 border-brand-200 border-t-brand-600 rounded-full animate-spin mx-auto" />
             </div>
           ) : (services || []).length === 0 ? (
-            <div className="text-center py-12 text-dark-500">
+            <div className="text-center py-12 text-dark-500 dark:text-dark-400">
               No services available yet.
             </div>
           ) : (
@@ -65,10 +65,10 @@ export default function ServicesContent() {
                   <AnimatedSection>
                     <div className={`grid lg:grid-cols-2 gap-8 lg:gap-16 items-start ${isEven ? '' : 'lg:direction-rtl'}`}>
                       <div className={isEven ? '' : 'lg:order-2'}>
-                        <h2 className="text-2xl sm:text-3xl font-bold text-dark-900 mb-4">
+                        <h2 className="text-2xl sm:text-3xl font-bold text-dark-900 dark:text-white mb-4">
                           {service.title}
                         </h2>
-                        <p className="text-dark-600 leading-relaxed mb-6">
+                        <p className="text-dark-500 dark:text-dark-400 leading-relaxed mb-6">
                           {service.description}
                         </p>
                         <Button href="/contact" variant="primary" size="md" className="group">
@@ -77,13 +77,13 @@ export default function ServicesContent() {
                         </Button>
                       </div>
                       <div className={isEven ? '' : 'lg:order-1'}>
-                        <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-dark-100">
-                          <h4 className="font-semibold text-dark-900 mb-4">What&apos;s Included</h4>
+                        <div className="bg-white dark:bg-dark-900 rounded-2xl border border-dark-100 dark:border-dark-800 shadow-sm dark:shadow-none p-6 sm:p-8">
+                          <h4 className="font-semibold text-dark-900 dark:text-white mb-4">What&apos;s Included</h4>
                           <ul className="space-y-3">
                             {service.features?.map((feature) => (
                               <li key={feature} className="flex items-start gap-3">
                                 <HiCheckCircle className="w-5 h-5 text-accent-emerald shrink-0 mt-0.5" />
-                                <span className="text-dark-700 text-sm">{feature}</span>
+                                <span className="text-dark-700 dark:text-dark-300 text-sm">{feature}</span>
                               </li>
                             ))}
                           </ul>
@@ -99,7 +99,7 @@ export default function ServicesContent() {
       </section>
 
       {/* Tech Stack */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white dark:bg-dark-950">
         <div className="container-max">
           <AnimatedSection>
             <SectionHeader
@@ -124,9 +124,9 @@ export default function ServicesContent() {
               { name: 'Vercel', desc: 'Deployment' },
             ].map((tech) => (
               <StaggerItem key={tech.name}>
-                <div className="p-5 rounded-xl border border-dark-100 text-center hover:border-brand-200 hover:bg-brand-50/50 transition-all duration-300">
-                  <h4 className="font-semibold text-dark-900 text-sm">{tech.name}</h4>
-                  <p className="text-dark-500 text-xs mt-1">{tech.desc}</p>
+                <div className="p-5 rounded-xl border border-dark-100 dark:border-dark-800 text-center hover:border-brand-200 dark:hover:border-brand-800 hover:bg-brand-50/50 dark:hover:bg-brand-950/20 transition-all duration-200 bg-white dark:bg-dark-900">
+                  <h4 className="font-semibold text-dark-900 dark:text-white text-sm">{tech.name}</h4>
+                  <p className="text-dark-500 dark:text-dark-400 text-xs mt-1">{tech.desc}</p>
                 </div>
               </StaggerItem>
             ))}

@@ -48,11 +48,10 @@ export default function HomePage() {
     <>
       {/* ─── HERO ─────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-dark-950">
-        {/* Gradient Orbs */}
+        {/* Subtle gradient background */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-brand-600/20 rounded-full blur-[128px] animate-float" />
-          <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-brand-400/10 rounded-full blur-[128px] animate-float animate-delay-300" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-900/20 rounded-full blur-[128px]" />
+          <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-brand-600/15 rounded-full blur-[128px]" />
+          <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-brand-400/8 rounded-full blur-[128px]" />
         </div>
 
         {/* Grid Pattern */}
@@ -113,11 +112,11 @@ export default function HomePage() {
               className="flex flex-col sm:flex-row gap-4"
             >
               <Button href="/contact" variant="primary" size="lg" className="group">
-                Start Your Project
+                Get a Quote
                 <HiArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button href="/portfolio" variant="ghost" size="lg" className="text-dark-300 hover:text-white hover:bg-white/10">
-                View Our Work
+                View Work
                 <HiArrowUpRight className="w-5 h-5" />
               </Button>
             </motion.div>
@@ -141,7 +140,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── VALUE PROPOSITION ────────────────────────────────── */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white dark:bg-dark-950">
         <div className="container-max">
           <AnimatedSection>
             <SectionHeader
@@ -191,10 +190,10 @@ export default function HomePage() {
               },
             ].map((item) => (
               <StaggerItem key={item.title}>
-                <div className="p-6 sm:p-8 rounded-2xl border border-dark-100 hover:border-brand-200 transition-colors duration-300 h-full">
+                <div className="p-6 sm:p-8 rounded-2xl border border-dark-100 dark:border-dark-800 hover:border-brand-200 dark:hover:border-brand-800 transition-colors duration-200 h-full bg-white dark:bg-dark-900">
                   <span className="text-2xl mb-4 block">{item.icon}</span>
-                  <h3 className="text-lg font-bold text-dark-900 mb-2">{item.title}</h3>
-                  <p className="text-dark-600 text-sm leading-relaxed">{item.description}</p>
+                  <h3 className="text-lg font-bold text-dark-900 dark:text-white mb-2">{item.title}</h3>
+                  <p className="text-dark-500 dark:text-dark-400 text-sm leading-relaxed">{item.description}</p>
                 </div>
               </StaggerItem>
             ))}
@@ -203,7 +202,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── FEATURED SERVICES ────────────────────────────────── */}
-      <section className="section-padding bg-dark-50">
+      <section className="section-padding bg-dark-50 dark:bg-dark-900">
         <div className="container-max">
           <AnimatedSection>
             <SectionHeader
@@ -219,7 +218,7 @@ export default function HomePage() {
                 <div className="w-8 h-8 border-4 border-brand-200 border-t-brand-600 rounded-full animate-spin mx-auto" />
               </div>
             ) : (services || []).length === 0 ? (
-              <div className="col-span-full text-center py-12 text-dark-500">
+              <div className="col-span-full text-center py-12 text-dark-500 dark:text-dark-400">
                 No services available yet.
               </div>
             ) : (
@@ -241,7 +240,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── RECENT PROJECTS ──────────────────────────────────── */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white dark:bg-dark-950">
         <div className="container-max">
           <AnimatedSection>
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-12 lg:mb-16">
@@ -264,7 +263,7 @@ export default function HomePage() {
                 <div className="w-8 h-8 border-4 border-brand-200 border-t-brand-600 rounded-full animate-spin mx-auto" />
               </div>
             ) : (projects || []).length === 0 ? (
-              <div className="col-span-full text-center py-12 text-dark-500">
+              <div className="col-span-full text-center py-12 text-dark-500 dark:text-dark-400">
                 No projects available yet.
               </div>
             ) : (
@@ -311,7 +310,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── TESTIMONIALS ─────────────────────────────────────── */}
-      <section className="section-padding bg-dark-50">
+      <section className="section-padding bg-dark-50 dark:bg-dark-900">
         <div className="container-max">
           <AnimatedSection>
             <SectionHeader
@@ -328,7 +327,7 @@ export default function HomePage() {
                 <div className="w-8 h-8 border-4 border-brand-200 border-t-brand-600 rounded-full animate-spin mx-auto" />
               </div>
             ) : (testimonials || []).length === 0 ? (
-              <div className="col-span-full text-center py-12 text-dark-500">
+              <div className="col-span-full text-center py-12 text-dark-500 dark:text-dark-400">
                 No testimonials available yet.
               </div>
             ) : (
@@ -343,7 +342,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── PROCESS OVERVIEW ─────────────────────────────────── */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white dark:bg-dark-950">
         <div className="container-max">
           <AnimatedSection>
             <SectionHeader
@@ -379,9 +378,9 @@ export default function HomePage() {
             ].map((item) => (
               <StaggerItem key={item.step}>
                 <div className="text-center">
-                  <div className="text-5xl font-bold text-brand-100 mb-4">{item.step}</div>
-                  <h3 className="text-xl font-bold text-dark-900 mb-2">{item.title}</h3>
-                  <p className="text-dark-600 text-sm leading-relaxed">{item.description}</p>
+                  <div className="text-5xl font-bold text-brand-100 dark:text-brand-900 mb-4">{item.step}</div>
+                  <h3 className="text-xl font-bold text-dark-900 dark:text-white mb-2">{item.title}</h3>
+                  <p className="text-dark-500 dark:text-dark-400 text-sm leading-relaxed">{item.description}</p>
                 </div>
               </StaggerItem>
             ))}

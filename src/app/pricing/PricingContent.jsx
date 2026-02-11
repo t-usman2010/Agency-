@@ -28,16 +28,16 @@ export default function PricingContent() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-28 sm:pt-36 pb-16 sm:pb-20 bg-white">
+      <section className="pt-28 sm:pt-36 pb-16 sm:pb-20 bg-white dark:bg-dark-950">
         <div className="container-max px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
             <span className="section-label">Pricing</span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-dark-900 leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-dark-900 dark:text-white leading-tight mb-6">
               Transparent pricing.
               <br />
               <span className="gradient-text">No surprises.</span>
             </h1>
-            <p className="text-lg sm:text-xl text-dark-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl text-dark-500 dark:text-dark-400 max-w-2xl mx-auto leading-relaxed">
               Choose a package that fits your needs, or contact us for a custom quote.
               Every package includes our full attention and commitment to quality.
             </p>
@@ -64,7 +64,7 @@ export default function PricingContent() {
       </section>
 
       {/* Pricing Cards */}
-      <section className="section-padding bg-dark-50">
+      <section className="section-padding bg-dark-50 dark:bg-dark-900">
         <div className="container-max">
           <StaggerContainer className="grid md:grid-cols-3 gap-6 lg:gap-8" staggerDelay={0.12}>
             {loading ? (
@@ -72,17 +72,17 @@ export default function PricingContent() {
                 <div className="w-8 h-8 border-4 border-brand-200 border-t-brand-600 rounded-full animate-spin mx-auto" />
               </div>
             ) : (packages || []).length === 0 ? (
-              <div className="col-span-full text-center py-12 text-dark-500">
+              <div className="col-span-full text-center py-12 text-dark-500 dark:text-dark-400">
                 No pricing packages available yet.
               </div>
             ) : (
               (packages || []).map((pkg) => (
                 <StaggerItem key={pkg.id || pkg.name}>
                   <div
-                    className={`relative bg-white rounded-2xl p-6 sm:p-8 shadow-sm border flex flex-col h-full ${
+                    className={`relative bg-white dark:bg-dark-900 rounded-2xl border border-dark-100 dark:border-dark-800 shadow-sm dark:shadow-none p-6 sm:p-8 flex flex-col h-full ${
                       pkg.popular
-                        ? 'border-brand-600 ring-2 ring-brand-600/20'
-                        : 'border-dark-100'
+                        ? 'border-brand-600 dark:border-brand-500 ring-2 ring-brand-600/20 dark:ring-brand-500/20'
+                        : ''
                     }`}
                   >
                     {pkg.popular && (
@@ -94,11 +94,11 @@ export default function PricingContent() {
                     )}
 
                     <div className="mb-6">
-                      <h3 className="text-xl font-bold text-dark-900 mb-1">{pkg.name}</h3>
-                      <p className="text-dark-500 text-sm mb-4">{pkg.description}</p>
+                      <h3 className="text-xl font-bold text-dark-900 dark:text-white mb-1">{pkg.name}</h3>
+                      <p className="text-dark-500 dark:text-dark-400 text-sm mb-4">{pkg.description}</p>
                       <div className="flex items-baseline gap-1">
-                        <span className="text-4xl font-bold text-dark-900">{pkg.price}</span>
-                        {pkg.period && <span className="text-dark-500 text-sm">{pkg.period}</span>}
+                        <span className="text-4xl font-bold text-dark-900 dark:text-white">{pkg.price}</span>
+                        {pkg.period && <span className="text-dark-500 dark:text-dark-400 text-sm">{pkg.period}</span>}
                       </div>
                     </div>
 
@@ -106,7 +106,7 @@ export default function PricingContent() {
                       {pkg.features?.map((feature, idx) => (
                         <li key={idx} className="flex items-start gap-3">
                           <HiCheckCircle className="w-5 h-5 text-accent-emerald shrink-0 mt-0.5" />
-                          <span className="text-sm text-dark-700">{typeof feature === 'string' ? feature : feature.text || feature}</span>
+                          <span className="text-sm text-dark-700 dark:text-dark-300">{typeof feature === 'string' ? feature : feature.text || feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -123,7 +123,7 @@ export default function PricingContent() {
       </section>
 
       {/* FAQs */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white dark:bg-dark-950">
         <div className="container-max max-w-3xl">
           <AnimatedSection>
             <SectionHeader

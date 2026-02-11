@@ -12,14 +12,14 @@ export default function Accordion({ items }) {
       {(items || []).map((item, index) => (
         <div
           key={index}
-          className="border border-dark-100 rounded-xl overflow-hidden bg-white"
+          className="border border-dark-100 dark:border-dark-800 rounded-xl overflow-hidden bg-white dark:bg-dark-900"
         >
           <button
             onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
-            className="w-full flex items-center justify-between p-5 sm:p-6 text-left hover:bg-dark-50 transition-colors"
+            className="w-full flex items-center justify-between p-5 sm:p-6 text-left hover:bg-dark-50 dark:hover:bg-dark-800 transition-colors"
             aria-expanded={openIndex === index}
           >
-            <span className="font-semibold text-dark-900 pr-4">{item.question}</span>
+            <span className="font-semibold text-dark-900 dark:text-white pr-4">{item.question}</span>
             <HiChevronDown
               className={`w-5 h-5 text-dark-400 shrink-0 transition-transform duration-300 ${
                 openIndex === index ? 'rotate-180' : ''
@@ -34,7 +34,7 @@ export default function Accordion({ items }) {
                 exit={{ height: 0, opacity: 0 }}
                 transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
               >
-                <div className="px-5 sm:px-6 pb-5 sm:pb-6 text-dark-600 leading-relaxed">
+                <div className="px-5 sm:px-6 pb-5 sm:pb-6 text-dark-600 dark:text-dark-400 leading-relaxed">
                   {item.answer}
                 </div>
               </motion.div>

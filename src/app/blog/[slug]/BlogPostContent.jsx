@@ -8,12 +8,12 @@ import Button from '@/components/ui/Button';
 export default function BlogPostContent({ post }) {
   return (
     <>
-      <article className="pt-28 sm:pt-36 pb-16 bg-white">
+      <article className="pt-28 sm:pt-36 pb-16 bg-white dark:bg-dark-950">
         <div className="container-max px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
           <AnimatedSection>
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-sm text-dark-500 hover:text-dark-900 transition-colors mb-8"
+              className="inline-flex items-center gap-2 text-sm text-dark-500 dark:text-dark-400 hover:text-dark-900 dark:hover:text-white transition-colors mb-8"
             >
               <HiArrowLeft className="w-4 h-4" />
               Back to Blog
@@ -26,18 +26,18 @@ export default function BlogPostContent({ post }) {
               <span className="text-dark-500 text-xs">{post.readTime}</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-dark-900 leading-tight mb-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white leading-tight mb-4">
               {post.title}
             </h1>
 
-            <div className="flex items-center gap-3 text-sm text-dark-500 mb-10 pb-8 border-b border-dark-100">
-              <div className="w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center text-brand-700 font-semibold text-xs">
+            <div className="flex items-center gap-3 text-sm text-dark-500 dark:text-dark-400 mb-10 pb-8 border-b border-dark-100 dark:border-dark-800">
+              <div className="w-8 h-8 rounded-full bg-brand-100 dark:bg-brand-950/40 flex items-center justify-center text-brand-700 dark:text-brand-400 font-semibold text-xs">
                 {post.author
                   .split(' ')
                   .map((n) => n[0])
                   .join('')}
               </div>
-              <span className="font-medium text-dark-700">{post.author}</span>
+              <span className="font-medium text-dark-700 dark:text-dark-300">{post.author}</span>
               <span>·</span>
               <span>{post.date}</span>
             </div>
@@ -45,27 +45,27 @@ export default function BlogPostContent({ post }) {
 
           {/* Article Image Placeholder */}
           <AnimatedSection variant="scaleIn">
-            <div className="aspect-[16/9] bg-gradient-to-br from-brand-50 via-brand-100 to-dark-50 rounded-2xl mb-10 flex items-center justify-center">
-              <span className="text-brand-400 font-medium">Article Cover Image</span>
+            <div className="aspect-[16/9] bg-gradient-to-br from-brand-50 via-brand-100 to-dark-50 dark:from-brand-950/30 dark:via-dark-800 dark:to-dark-900 rounded-2xl mb-10 flex items-center justify-center">
+              <span className="text-brand-400 dark:text-brand-500 font-medium">Article Cover Image</span>
             </div>
           </AnimatedSection>
 
           {/* Article Content */}
           <AnimatedSection>
-            <div className="prose prose-lg max-w-none prose-headings:text-dark-900 prose-headings:font-bold prose-p:text-dark-600 prose-p:leading-relaxed prose-strong:text-dark-800 prose-li:text-dark-600 prose-a:text-brand-600 prose-a:no-underline hover:prose-a:underline">
+            <div className="prose prose-lg max-w-none prose-headings:text-dark-900 dark:prose-headings:text-white prose-headings:font-bold prose-p:text-dark-600 dark:prose-p:text-dark-400 prose-p:leading-relaxed prose-strong:text-dark-800 dark:prose-strong:text-dark-200 prose-li:text-dark-600 dark:prose-li:text-dark-400 prose-a:text-brand-600 dark:prose-a:text-brand-400 prose-a:no-underline hover:prose-a:underline">
               {post.content.split('\n').map((line, i) => {
                 const trimmed = line.trim();
                 if (!trimmed) return null;
                 if (trimmed.startsWith('## ')) {
                   return (
-                    <h2 key={i} className="text-2xl font-bold text-dark-900 mt-10 mb-4">
+                    <h2 key={i} className="text-2xl font-bold text-dark-900 dark:text-white mt-10 mb-4">
                       {trimmed.replace('## ', '')}
                     </h2>
                   );
                 }
                 if (trimmed.startsWith('### ')) {
                   return (
-                    <h3 key={i} className="text-xl font-bold text-dark-900 mt-8 mb-3">
+                    <h3 key={i} className="text-xl font-bold text-dark-900 dark:text-white mt-8 mb-3">
                       {trimmed.replace('### ', '')}
                     </h3>
                   );
@@ -75,15 +75,15 @@ export default function BlogPostContent({ post }) {
                   return (
                     <div key={i} className="flex items-start gap-3 my-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-brand-600 mt-2.5 shrink-0" />
-                      <p className="text-dark-600">
-                        <strong className="text-dark-900">{parts[0]}:</strong>
+                      <p className="text-dark-600 dark:text-dark-400">
+                        <strong className="text-dark-900 dark:text-white">{parts[0]}:</strong>
                         {parts[1]}
                       </p>
                     </div>
                   );
                 }
                 return (
-                  <p key={i} className="text-dark-600 leading-relaxed my-4">
+                  <p key={i} className="text-dark-600 dark:text-dark-400 leading-relaxed my-4">
                     {trimmed}
                   </p>
                 );
@@ -93,17 +93,17 @@ export default function BlogPostContent({ post }) {
 
           {/* Author Card */}
           <AnimatedSection>
-            <div className="mt-12 p-6 sm:p-8 bg-dark-50 rounded-2xl border border-dark-100">
+            <div className="mt-12 p-6 sm:p-8 bg-dark-50 dark:bg-dark-900 rounded-2xl border border-dark-100 dark:border-dark-800">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-full bg-brand-100 flex items-center justify-center text-brand-700 font-semibold text-lg">
+                <div className="w-14 h-14 rounded-full bg-brand-100 dark:bg-brand-950/40 flex items-center justify-center text-brand-700 dark:text-brand-400 font-semibold text-lg">
                   {post.author
                     .split(' ')
                     .map((n) => n[0])
                     .join('')}
                 </div>
                 <div>
-                  <p className="font-semibold text-dark-900">{post.author}</p>
-                  <p className="text-dark-500 text-sm">TriForge Studio</p>
+                  <p className="font-semibold text-dark-900 dark:text-white">{post.author}</p>
+                  <p className="text-dark-500 dark:text-dark-400 text-sm">TriForge Studio</p>
                 </div>
               </div>
             </div>
@@ -112,13 +112,13 @@ export default function BlogPostContent({ post }) {
       </article>
 
       {/* CTA */}
-      <section className="section-padding bg-dark-50 border-t border-dark-100">
+      <section className="section-padding bg-dark-50 dark:bg-dark-900 border-t border-dark-100 dark:border-dark-800">
         <div className="container-max text-center">
           <AnimatedSection>
-            <h3 className="text-2xl font-bold text-dark-900 mb-3">
+            <h3 className="text-2xl font-bold text-dark-900 dark:text-white mb-3">
               Want to work with us?
             </h3>
-            <p className="text-dark-600 mb-6">
+            <p className="text-dark-500 dark:text-dark-400 mb-6">
               Let&apos;s bring your project to life.
             </p>
             <Button href="/contact" variant="primary" size="md">

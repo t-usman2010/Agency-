@@ -9,25 +9,25 @@ export default function CaseStudyContent({ project }) {
   return (
     <>
       {/* Hero */}
-      <section className="pt-28 sm:pt-36 pb-16 sm:pb-20 bg-white">
+      <section className="pt-28 sm:pt-36 pb-16 sm:pb-20 bg-white dark:bg-dark-950">
         <div className="container-max px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <Link
               href="/portfolio"
-              className="inline-flex items-center gap-2 text-sm text-dark-500 hover:text-dark-900 transition-colors mb-6"
+              className="inline-flex items-center gap-2 text-sm text-dark-500 dark:text-dark-400 hover:text-dark-900 dark:hover:text-white transition-colors mb-6"
             >
               <HiArrowLeft className="w-4 h-4" />
               Back to Portfolio
             </Link>
-            <span className="text-xs font-semibold tracking-widest uppercase text-brand-600 mb-3 block">
+            <span className="text-xs font-semibold tracking-widest uppercase text-brand-600 dark:text-brand-400 mb-3 block">
               {project.category}
             </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-dark-900 leading-tight mb-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white leading-tight mb-4">
               {project.title}
             </h1>
-            <div className="flex flex-wrap gap-4 text-sm text-dark-500">
-              <span>Client: <strong className="text-dark-700">{project.client}</strong></span>
-              <span>Duration: <strong className="text-dark-700">{project.duration}</strong></span>
+            <div className="flex flex-wrap gap-4 text-sm text-dark-500 dark:text-dark-400">
+              <span>Client: <strong className="text-dark-700 dark:text-dark-200">{project.client}</strong></span>
+              <span>Duration: <strong className="text-dark-700 dark:text-dark-200">{project.duration}</strong></span>
             </div>
           </AnimatedSection>
         </div>
@@ -37,35 +37,35 @@ export default function CaseStudyContent({ project }) {
       <section className="px-4 sm:px-6 lg:px-8 pb-16">
         <div className="container-max">
           <AnimatedSection variant="scaleIn">
-            <div className="aspect-[16/9] bg-gradient-to-br from-brand-100 via-brand-50 to-dark-50 rounded-2xl flex items-center justify-center">
-              <span className="text-brand-400 font-medium text-lg">{project.title} — Hero Visual</span>
+            <div className="aspect-[16/9] bg-gradient-to-br from-brand-100 via-brand-50 to-dark-50 dark:from-brand-950/30 dark:via-dark-800 dark:to-dark-900 rounded-2xl flex items-center justify-center">
+              <span className="text-brand-400 dark:text-brand-500 font-medium text-lg">{project.title} — Hero Visual</span>
             </div>
           </AnimatedSection>
         </div>
       </section>
 
       {/* Problem & Solution */}
-      <section className="section-padding bg-dark-50">
+      <section className="section-padding bg-dark-50 dark:bg-dark-900">
         <div className="container-max">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
             <AnimatedSection>
               <h2 className="text-sm font-semibold tracking-widest uppercase text-accent-coral mb-3">
                 The Challenge
               </h2>
-              <p className="text-dark-700 text-lg leading-relaxed">{project?.problem || project?.challenge || project?.description}</p>
+              <p className="text-dark-700 dark:text-dark-300 text-lg leading-relaxed">{project?.problem || project?.challenge || project?.description}</p>
             </AnimatedSection>
             <AnimatedSection variant="fadeRight" delay={0.1}>
               <h2 className="text-sm font-semibold tracking-widest uppercase text-accent-emerald mb-3">
                 Our Solution
               </h2>
-              <p className="text-dark-700 text-lg leading-relaxed">{project?.solution}</p>
+              <p className="text-dark-700 dark:text-dark-300 text-lg leading-relaxed">{project?.solution}</p>
             </AnimatedSection>
           </div>
         </div>
       </section>
 
       {/* Results */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white dark:bg-dark-950">
         <div className="container-max">
           <AnimatedSection>
             <h2 className="section-title text-center mb-12">Measurable Results</h2>
@@ -73,12 +73,12 @@ export default function CaseStudyContent({ project }) {
           <StaggerContainer className="grid sm:grid-cols-3 gap-6" staggerDelay={0.1}>
             {project.results.map((result) => (
               <StaggerItem key={result.metric}>
-                <div className="text-center p-8 rounded-2xl bg-dark-50 border border-dark-100">
-                  <div className="text-3xl sm:text-4xl font-bold text-brand-600 mb-2">
+                <div className="text-center p-8 rounded-2xl bg-dark-50 dark:bg-dark-900 border border-dark-100 dark:border-dark-800">
+                  <div className="text-3xl sm:text-4xl font-bold text-brand-600 dark:text-brand-400 mb-2">
                     {result.value}
                   </div>
-                  <div className="font-semibold text-dark-900 mb-1">{result.metric}</div>
-                  <div className="text-dark-500 text-sm">{result.description}</div>
+                  <div className="font-semibold text-dark-900 dark:text-white mb-1">{result.metric}</div>
+                  <div className="text-dark-500 dark:text-dark-400 text-sm">{result.description}</div>
                 </div>
               </StaggerItem>
             ))}
@@ -87,7 +87,7 @@ export default function CaseStudyContent({ project }) {
       </section>
 
       {/* Tech Stack */}
-      <section className="section-padding bg-dark-50">
+      <section className="section-padding bg-dark-50 dark:bg-dark-900">
         <div className="container-max">
           <AnimatedSection>
             <h2 className="section-title text-center mb-8">Tech Stack</h2>
@@ -95,7 +95,7 @@ export default function CaseStudyContent({ project }) {
               {((project.techStack || project.technologies) || []).map((tech) => (
                 <span
                   key={tech}
-                  className="px-4 py-2 bg-white rounded-lg border border-dark-100 text-dark-700 text-sm font-medium"
+                  className="px-4 py-2 bg-white dark:bg-dark-800 rounded-lg border border-dark-100 dark:border-dark-700 text-dark-700 dark:text-dark-300 text-sm font-medium"
                 >
                   {tech}
                 </span>
@@ -128,7 +128,7 @@ export default function CaseStudyContent({ project }) {
       )}
 
       {/* CTA */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white dark:bg-dark-950">
         <div className="container-max text-center">
           <AnimatedSection>
             <h2 className="section-title mb-4">Want similar results?</h2>

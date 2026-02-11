@@ -8,12 +8,12 @@ export default function Footer() {
   return (
     <footer className="bg-dark-950 text-dark-300">
       {/* CTA Section */}
-      <div className="border-b border-dark-800">
+      <div className="border-b border-dark-800/60">
         <div className="container-max section-padding text-center">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 text-balance">
             Ready to build something remarkable?
           </h2>
-          <p className="text-dark-400 text-lg mb-8 max-w-xl mx-auto">
+          <p className="text-dark-400 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
             Let&apos;s discuss your project and create a digital experience your users will love.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -26,7 +26,7 @@ export default function Footer() {
             </Link>
             <Link
               href="/pricing"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-lg border-2 border-dark-700 text-white font-medium transition-all duration-300 hover:border-brand-500 hover:bg-brand-600/10"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-xl border-2 border-dark-700 text-white font-semibold transition-all duration-200 hover:border-brand-500 hover:bg-brand-600/10"
             >
               View Pricing
             </Link>
@@ -125,7 +125,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-dark-800">
+      <div className="border-t border-dark-800/60">
         <div className="container-max px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-dark-500 text-sm">
             &copy; {currentYear} {AGENCY_NAME}. All rights reserved.

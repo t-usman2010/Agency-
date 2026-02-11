@@ -38,15 +38,15 @@ export default function PortfolioContent() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-28 sm:pt-36 pb-16 sm:pb-20 bg-white">
+      <section className="pt-28 sm:pt-36 pb-16 sm:pb-20 bg-white dark:bg-dark-950">
         <div className="container-max px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <span className="section-label">Portfolio</span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-dark-900 leading-tight mb-6 max-w-3xl">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-dark-900 dark:text-white leading-tight mb-6 max-w-3xl">
               Work that speaks{' '}
               <span className="gradient-text">for itself</span>
             </h1>
-            <p className="text-lg sm:text-xl text-dark-600 max-w-2xl leading-relaxed">
+            <p className="text-lg sm:text-xl text-dark-500 dark:text-dark-400 max-w-2xl leading-relaxed">
               From analytics dashboards to e-commerce platforms, here are some of the
               projects we&apos;re most proud of — each with real, measurable impact.
             </p>
@@ -55,7 +55,7 @@ export default function PortfolioContent() {
       </section>
 
       {/* Projects Grid */}
-      <section className="section-padding bg-dark-50">
+      <section className="section-padding bg-dark-50 dark:bg-dark-900">
         <div className="container-max">
           <StaggerContainer className="grid sm:grid-cols-2 gap-6 lg:gap-8" staggerDelay={0.12}>
             {loading ? (
@@ -69,7 +69,7 @@ export default function PortfolioContent() {
                 <div className="text-dark-400 text-xs mt-2">Check browser console for details</div>
               </div>
             ) : (projects || []).length === 0 ? (
-              <div className="col-span-full text-center py-12 text-dark-500">
+              <div className="col-span-full text-center py-12 text-dark-500 dark:text-dark-400">
                 No projects available yet.
               </div>
             ) : (
@@ -84,7 +84,7 @@ export default function PortfolioContent() {
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white dark:bg-dark-950">
         <div className="container-max text-center">
           <AnimatedSection>
             <h2 className="section-title mb-4">Have a project in mind?</h2>
