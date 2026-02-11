@@ -1,113 +1,178 @@
 'use client';
 
 import Link from 'next/link';
-import { HiArrowLeft, HiArrowRight, HiCheckCircle, HiStar } from 'react-icons/hi2';
+import { HiArrowLeft, HiArrowRight, HiCheckCircle, HiStar, HiCodeBracket, HiLightBulb, HiRocketLaunch } from 'react-icons/hi2';
 import AnimatedSection, { StaggerContainer, StaggerItem } from '@/components/ui/AnimatedSection';
 import Button from '@/components/ui/Button';
 
 export default function CaseStudyContent({ project }) {
+  const technologies = project?.techStack || project?.technologies || [];
+  const results = project?.results || [];
+
   return (
     <>
-      {/* Hero */}
-      <section className="pt-28 sm:pt-36 pb-16 sm:pb-20 bg-white dark:bg-dark-950">
+      {/* Hero Section */}
+      <section className="relative pt-28 sm:pt-36 pb-0 bg-white dark:bg-dark-950 overflow-hidden">
         <div className="container-max px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <Link
               href="/portfolio"
-              className="inline-flex items-center gap-2 text-sm text-dark-500 dark:text-dark-400 hover:text-dark-900 dark:hover:text-white transition-colors mb-6"
+              className="inline-flex items-center gap-2 text-sm text-dark-500 dark:text-dark-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors mb-8 group"
             >
-              <HiArrowLeft className="w-4 h-4" />
+              <HiArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
               Back to Portfolio
             </Link>
-            <span className="text-xs font-semibold tracking-widest uppercase text-brand-600 dark:text-brand-400 mb-3 block">
-              {project.category}
-            </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white leading-tight mb-4">
-              {project.title}
-            </h1>
-            <div className="flex flex-wrap gap-4 text-sm text-dark-500 dark:text-dark-400">
-              <span>Client: <strong className="text-dark-700 dark:text-dark-200">{project.client}</strong></span>
-              <span>Duration: <strong className="text-dark-700 dark:text-dark-200">{project.duration}</strong></span>
+
+            <div className="max-w-4xl">
+              <span className="inline-block px-3 py-1 bg-brand-50 dark:bg-brand-950/40 text-brand-600 dark:text-brand-400 text-xs font-semibold tracking-wider uppercase rounded-full mb-4">
+                {project.category}
+              </span>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white leading-tight mb-6">
+                {project.title}
+              </h1>
+              {project.description && (
+                <p className="text-lg sm:text-xl text-dark-500 dark:text-dark-400 max-w-3xl leading-relaxed mb-8">
+                  {project.description}
+                </p>
+              )}
+              {technologies.length > 0 && (
+                <div className="flex flex-wrap gap-2 mb-10">
+                  {technologies.map((tech, idx) => (
+                    <span
+                      key={`hero-tech-${idx}`}
+                      className="px-3 py-1.5 bg-dark-100 dark:bg-dark-800 text-dark-600 dark:text-dark-300 text-sm rounded-full font-medium"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
           </AnimatedSection>
         </div>
-      </section>
 
-      {/* Hero Image Placeholder */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-16">
-        <div className="container-max">
-          <AnimatedSection variant="scaleIn">
-            <div className="aspect-[16/9] bg-gradient-to-br from-brand-100 via-brand-50 to-dark-50 dark:from-brand-950/30 dark:via-dark-800 dark:to-dark-900 rounded-2xl flex items-center justify-center">
-              <span className="text-brand-400 dark:text-brand-500 font-medium text-lg">{project.title} — Hero Visual</span>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Problem & Solution */}
-      <section className="section-padding bg-dark-50 dark:bg-dark-900">
-        <div className="container-max">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
-            <AnimatedSection>
-              <h2 className="text-sm font-semibold tracking-widest uppercase text-accent-coral mb-3">
-                The Challenge
-              </h2>
-              <p className="text-dark-700 dark:text-dark-300 text-lg leading-relaxed">{project?.problem || project?.challenge || project?.description}</p>
-            </AnimatedSection>
-            <AnimatedSection variant="fadeRight" delay={0.1}>
-              <h2 className="text-sm font-semibold tracking-widest uppercase text-accent-emerald mb-3">
-                Our Solution
-              </h2>
-              <p className="text-dark-700 dark:text-dark-300 text-lg leading-relaxed">{project?.solution}</p>
+        {/* Hero Image */}
+        {project?.image && (
+          <div className="container-max px-4 sm:px-6 lg:px-8 mt-4 pb-16">
+            <AnimatedSection variant="scaleIn" delay={0.15}>
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-dark-900/10 dark:shadow-dark-950/40 border border-dark-100 dark:border-dark-800">
+                <div className="aspect-[16/9]">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
             </AnimatedSection>
           </div>
-        </div>
+        )}
       </section>
 
-      {/* Results */}
-      <section className="section-padding bg-white dark:bg-dark-950">
-        <div className="container-max">
-          <AnimatedSection>
-            <h2 className="section-title text-center mb-12">Measurable Results</h2>
-          </AnimatedSection>
-          <StaggerContainer className="grid sm:grid-cols-3 gap-6" staggerDelay={0.1}>
-            {project.results.map((result) => (
-              <StaggerItem key={result.metric}>
-                <div className="text-center p-8 rounded-2xl bg-dark-50 dark:bg-dark-900 border border-dark-100 dark:border-dark-800">
-                  <div className="text-3xl sm:text-4xl font-bold text-brand-600 dark:text-brand-400 mb-2">
-                    {result.value}
+      {/* Overview Cards */}
+      {(project?.challenge || project?.solution) && (
+        <section className="section-padding bg-dark-50 dark:bg-dark-900">
+          <div className="container-max">
+            <AnimatedSection>
+              <h2 className="section-title text-center mb-4">Project Overview</h2>
+              <p className="section-subtitle text-center mx-auto mb-12">Understanding the problem and crafting the right approach</p>
+            </AnimatedSection>
+            <div className={`grid gap-8 ${project?.challenge && project?.solution ? 'lg:grid-cols-2' : 'max-w-2xl mx-auto'}`}>
+              {project?.challenge && (
+                <AnimatedSection delay={0.1}>
+                  <div className="h-full bg-white dark:bg-dark-800 rounded-2xl p-8 border border-dark-100 dark:border-dark-700 shadow-sm">
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="w-10 h-10 rounded-xl bg-red-50 dark:bg-red-950/30 flex items-center justify-center">
+                        <HiLightBulb className="w-5 h-5 text-accent-coral" />
+                      </div>
+                      <h3 className="text-lg font-bold text-dark-900 dark:text-white">The Challenge</h3>
+                    </div>
+                    <p className="text-dark-600 dark:text-dark-300 leading-relaxed">{project.challenge}</p>
                   </div>
-                  <div className="font-semibold text-dark-900 dark:text-white mb-1">{result.metric}</div>
-                  <div className="text-dark-500 dark:text-dark-400 text-sm">{result.description}</div>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
-      </section>
+                </AnimatedSection>
+              )}
+              {project?.solution && (
+                <AnimatedSection variant="fadeRight" delay={0.2}>
+                  <div className="h-full bg-white dark:bg-dark-800 rounded-2xl p-8 border border-dark-100 dark:border-dark-700 shadow-sm">
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 flex items-center justify-center">
+                        <HiRocketLaunch className="w-5 h-5 text-accent-emerald" />
+                      </div>
+                      <h3 className="text-lg font-bold text-dark-900 dark:text-white">Our Solution</h3>
+                    </div>
+                    <p className="text-dark-600 dark:text-dark-300 leading-relaxed">{project.solution}</p>
+                  </div>
+                </AnimatedSection>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Key Results */}
+      {results.length > 0 && (
+        <section className="section-padding bg-white dark:bg-dark-950">
+          <div className="container-max">
+            <AnimatedSection>
+              <h2 className="section-title text-center mb-4">Key Results</h2>
+              <p className="section-subtitle text-center mx-auto mb-12">The impact our work delivered</p>
+            </AnimatedSection>
+            <StaggerContainer
+              className={`grid gap-5 ${
+                results.length === 1
+                  ? 'max-w-lg mx-auto'
+                  : results.length === 2
+                  ? 'sm:grid-cols-2 max-w-3xl mx-auto'
+                  : 'sm:grid-cols-2 lg:grid-cols-3'
+              }`}
+              staggerDelay={0.08}
+            >
+              {results.map((result, idx) => (
+                <StaggerItem key={`result-${idx}`}>
+                  <div className="flex items-start gap-4 p-5 rounded-xl bg-dark-50 dark:bg-dark-900 border border-dark-100 dark:border-dark-800 hover:border-brand-200 dark:hover:border-brand-800 transition-colors">
+                    <div className="w-8 h-8 rounded-lg bg-accent-emerald/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <HiCheckCircle className="w-5 h-5 text-accent-emerald" />
+                    </div>
+                    <p className="text-dark-700 dark:text-dark-300 leading-relaxed font-medium">
+                      {typeof result === 'string' ? result : result.value || result.metric || result.description}
+                    </p>
+                  </div>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
+        </section>
+      )}
 
       {/* Tech Stack */}
-      <section className="section-padding bg-dark-50 dark:bg-dark-900">
-        <div className="container-max">
-          <AnimatedSection>
-            <h2 className="section-title text-center mb-8">Tech Stack</h2>
-            <div className="flex flex-wrap justify-center gap-3">
-              {((project.techStack || project.technologies) || []).map((tech) => (
-                <span
-                  key={tech}
-                  className="px-4 py-2 bg-white dark:bg-dark-800 rounded-lg border border-dark-100 dark:border-dark-700 text-dark-700 dark:text-dark-300 text-sm font-medium"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      {technologies.length > 0 && (
+        <section className="section-padding bg-dark-50 dark:bg-dark-900">
+          <div className="container-max">
+            <AnimatedSection>
+              <div className="flex items-center justify-center gap-3 mb-8">
+                <div className="w-10 h-10 rounded-xl bg-brand-50 dark:bg-brand-950/30 flex items-center justify-center">
+                  <HiCodeBracket className="w-5 h-5 text-brand-600 dark:text-brand-400" />
+                </div>
+                <h2 className="section-title mb-0">Tech Stack</h2>
+              </div>
+              <div className="flex flex-wrap justify-center gap-3">
+                {technologies.map((tech, idx) => (
+                  <span
+                    key={`${tech}-${idx}`}
+                    className="px-5 py-2.5 bg-white dark:bg-dark-800 rounded-xl border border-dark-100 dark:border-dark-700 text-dark-700 dark:text-dark-300 text-sm font-medium shadow-sm hover:shadow-md hover:border-brand-200 dark:hover:border-brand-800 transition-all"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </AnimatedSection>
+          </div>
+        </section>
+      )}
 
       {/* Testimonial */}
-      {project.testimonial && (
-        <section className="section-padding bg-brand-600">
+      {project?.testimonial && (
+        <section className="section-padding bg-gradient-to-br from-brand-600 to-brand-700">
           <div className="container-max max-w-3xl text-center">
             <AnimatedSection>
               <div className="flex justify-center gap-1 mb-6">
@@ -129,17 +194,24 @@ export default function CaseStudyContent({ project }) {
 
       {/* CTA */}
       <section className="section-padding bg-white dark:bg-dark-950">
-        <div className="container-max text-center">
+        <div className="container-max">
           <AnimatedSection>
-            <h2 className="section-title mb-4">Want similar results?</h2>
-            <p className="section-subtitle mx-auto mb-8">
-              Let&apos;s discuss how we can apply the same strategic thinking and technical
-              excellence to your project.
-            </p>
-            <Button href="/contact" variant="primary" size="lg" className="group">
-              Start Your Project
-              <HiArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </Button>
+            <div className="relative bg-gradient-to-br from-dark-900 to-dark-800 dark:from-dark-800 dark:to-dark-900 rounded-3xl p-10 sm:p-16 text-center overflow-hidden">
+              {/* Background decoration */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-brand-500/10 rounded-full blur-3xl" />
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-brand-600/10 rounded-full blur-3xl" />
+              <div className="relative">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">Want similar results?</h2>
+                <p className="text-dark-300 max-w-xl mx-auto mb-8 text-lg">
+                  Let&apos;s discuss how we can apply the same strategic thinking and technical
+                  excellence to your project.
+                </p>
+                <Button href="/contact" variant="primary" size="lg" className="group">
+                  Start Your Project
+                  <HiArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </div>
+            </div>
           </AnimatedSection>
         </div>
       </section>
