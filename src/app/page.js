@@ -66,17 +66,6 @@ export default function HomePage() {
 
         <div className="container-max px-4 sm:px-6 lg:px-8 relative z-10 pt-24 pb-16 sm:pt-32 sm:pb-24">
           <div className="max-w-4xl">
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-600/10 border border-brand-500/20 text-brand-300 text-sm mb-8"
-            >
-              <HiSparkles className="w-4 h-4" />
-              <span>Limited Q1 availability — 2 spots remaining</span>
-            </motion.div>
-
             {/* Heading */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
@@ -146,7 +135,7 @@ export default function HomePage() {
             <SectionHeader
               label="Why WebNest"
               title="Built different. Built to last."
-              subtitle="We combine deep technical expertise with design thinking to deliver products that don't just look good — they perform."
+              subtitle="We combine deep technical expertise with design thinking to deliver products that don't just look good they perform."
             />
           </AnimatedSection>
 
@@ -155,7 +144,7 @@ export default function HomePage() {
               {
                 title: 'Product-Minded Engineering',
                 description:
-                  'We don\'t just write code — we think about user journeys, conversion funnels, and business outcomes at every step.',
+                  'We don\'t just write code we think about user journeys, conversion funnels, and business outcomes at every step.',
                 icon: '🧠',
               },
               {
@@ -363,7 +352,7 @@ export default function HomePage() {
               {
                 step: '02',
                 title: 'Design',
-                description: 'Wireframes, visual design, and interactive prototypes — all reviewed and approved before a line of code is written.',
+                description: 'Wireframes, visual design, and interactive prototypes all reviewed and approved before a line of code is written.',
               },
               {
                 step: '03',

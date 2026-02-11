@@ -38,7 +38,7 @@ export default function AboutContent() {
             </h1>
             <p className="text-lg sm:text-xl text-dark-500 dark:text-dark-400 max-w-2xl leading-relaxed">
               {AGENCY_NAME} is a tight-knit studio of two MERN-stack developers and one
-              multidisciplinary designer. We keep our team lean by design — so every
+              multidisciplinary designer. We keep our team lean by design so every
               project gets the full attention of senior-level talent from day one.
             </p>
           </AnimatedSection>
@@ -62,7 +62,7 @@ export default function AboutContent() {
               </p>
               <p className="text-dark-500 dark:text-dark-400 leading-relaxed mt-4">
                 Every project we take on receives the same level of strategic thinking,
-                design craft, and engineering rigor — whether it&apos;s a five-page website or
+                design craft, and engineering rigor whether it&apos;s a five-page website or
                 a complex SaaS platform. We measure our success by yours.
               </p>
             </AnimatedSection>

@@ -55,7 +55,7 @@ export default function PricingContent() {
                 Q1 2026 Offer
               </div>
               <h3 className="text-xl sm:text-2xl font-bold mb-2">
-                20% off any package — booked before March 31, 2026
+                20% off any package booked before March 31, 2026
               </h3>
               <p className="text-brand-100 text-sm">Only 2 project slots remaining this quarter.</p>
             </div>

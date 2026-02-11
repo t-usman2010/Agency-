@@ -38,13 +38,13 @@ export const metadata = {
     locale: "en_US",
     url: "https://webneststudio.com",
     siteName: "WebNest Studio",
-    title: "WebNest Studio — Web Development & Design Agency",
+    title: "WebNest Studio Web Development & Design Agency",
     description:
       "Boutique web development agency specializing in custom web apps, SaaS MVPs, UI/UX design, and branding.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "WebNest Studio — Web Development & Design Agency",
+    title: "WebNest Studio Web Development & Design Agency",
     description:
       "Boutique web development agency specializing in custom web apps, SaaS MVPs, UI/UX design, and branding.",
   },

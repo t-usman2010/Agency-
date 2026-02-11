@@ -48,7 +48,7 @@ export default function PortfolioContent() {
             </h1>
             <p className="text-lg sm:text-xl text-dark-500 dark:text-dark-400 max-w-2xl leading-relaxed">
               From analytics dashboards to e-commerce platforms, here are some of the
-              projects we&apos;re most proud of — each with real, measurable impact.
+              projects we&apos;re most proud of each with real, measurable impact.
             </p>
           </AnimatedSection>
         </div>
