@@ -103,7 +103,7 @@ export default function BlogPostContent({ post }) {
                 </div>
                 <div>
                   <p className="font-semibold text-dark-900 dark:text-white">{post.author}</p>
-                  <p className="text-dark-500 dark:text-dark-400 text-sm">WebNest Studio</p>
+                  <p className="text-dark-500 dark:text-dark-400 text-sm">NestWeb</p>
                 </div>
               </div>
             </div>

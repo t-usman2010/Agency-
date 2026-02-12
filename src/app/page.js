@@ -13,7 +13,7 @@ import Button from '@/components/ui/Button';
 import { AGENCY_NAME } from '@/lib/data';
 
 const STATS = [
-  { value: '40+', label: 'Projects Delivered' },
+  { value: '10+', label: 'Projects Delivered' },
   { value: '98%', label: 'Client Satisfaction' },
   { value: '3', label: 'Expert Specialists' },
   { value: '<2s', label: 'Avg. Load Time' },
@@ -133,7 +133,7 @@ export default function HomePage() {
         <div className="container-max">
           <AnimatedSection>
             <SectionHeader
-              label="Why WebNest"
+              label="Why NestWeb"
               title="Built different. Built to last."
               subtitle="We combine deep technical expertise with design thinking to deliver products that don't just look good they perform."
             />

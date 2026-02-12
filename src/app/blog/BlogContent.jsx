@@ -20,7 +20,7 @@ export default function BlogContent() {
               <span className="gradient-text">better products</span>
             </h1>
             <p className="text-lg sm:text-xl text-dark-500 dark:text-dark-400 max-w-2xl leading-relaxed">
-              Practical insights on development, design, and strategy from the team at WebNest Studio.
+              Practical insights on development, design, and strategy from the team at NestWeb.
             </p>
           </AnimatedSection>
         </div>

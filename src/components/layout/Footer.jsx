@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { HiArrowUpRight } from 'react-icons/hi2';
 import { AGENCY_NAME, AGENCY_EMAIL, AGENCY_PHONE, AGENCY_ADDRESS, NAV_LINKS, SERVICES } from '@/lib/data';
 
@@ -39,14 +40,17 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">TF</span>
-              </div>
-              <span className="font-bold text-lg text-white">{AGENCY_NAME}</span>
+            <Link href="/" className="flex items-center mb-4">
+              <Image
+                src="/logo3.png"
+                alt="NestWeb Logo"
+                width={140}
+                height={52}
+                className="h-10 w-auto object-contain brightness-0 invert"
+              />
             </Link>
             <p className="text-dark-400 text-sm leading-relaxed mb-4">
-              A boutique web development studio crafting high-performance digital experiences for ambitious brands.
+              Code. Create. Connect. — Building high-performance digital experiences for ambitious brands.
             </p>
             <p className="text-dark-500 text-xs">{AGENCY_ADDRESS}</p>
           </div>
