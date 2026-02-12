@@ -47,16 +47,24 @@ export default function HomePage() {
   return (
     <>
       {/* ─── HERO ─────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-dark-950">
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-white dark:bg-dark-950">
         {/* Subtle gradient background */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-brand-600/15 rounded-full blur-[128px]" />
-          <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-brand-400/8 rounded-full blur-[128px]" />
+          <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-brand-600/10 dark:bg-brand-600/15 rounded-full blur-[128px]" />
+          <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-brand-400/5 dark:bg-brand-400/8 rounded-full blur-[128px]" />
         </div>
 
         {/* Grid Pattern */}
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.04] dark:opacity-[0.03]"
+          style={{
+            backgroundImage:
+              'linear-gradient(rgba(0,0,0,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.1) 1px, transparent 1px)',
+            backgroundSize: '64px 64px',
+          }}
+        />
+        <div
+          className="absolute inset-0 opacity-[0.03] hidden dark:block"
           style={{
             backgroundImage:
               'linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)',
@@ -71,12 +79,12 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight mb-6"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-dark-900 dark:text-white leading-[1.1] tracking-tight mb-6"
             >
               We build digital
               <br />
               products that{' '}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-brand-400 to-brand-300">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-brand-500 dark:from-brand-400 dark:to-brand-300">
                 drive growth
               </span>
             </motion.h1>
@@ -86,7 +94,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg sm:text-xl text-dark-400 max-w-2xl mb-10 leading-relaxed"
+              className="text-lg sm:text-xl text-dark-500 dark:text-dark-400 max-w-2xl mb-10 leading-relaxed"
             >
               {AGENCY_NAME} is a boutique agency of MERN stack developers and a designer
               crafting high-performance web applications, SaaS platforms, and brand
@@ -104,7 +112,7 @@ export default function HomePage() {
                 Get a Quote
                 <HiArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button href="/portfolio" variant="ghost" size="lg" className="text-dark-300 hover:text-white hover:bg-white/10">
+              <Button href="/portfolio" variant="ghost" size="lg" className="text-dark-600 hover:text-dark-900 hover:bg-dark-100 dark:text-dark-300 dark:hover:text-white dark:hover:bg-white/10">
                 View Work
                 <HiArrowUpRight className="w-5 h-5" />
               </Button>
@@ -115,12 +123,12 @@ export default function HomePage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 mt-16 pt-12 border-t border-dark-800"
+              className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 mt-16 pt-12 border-t border-dark-200 dark:border-dark-800"
             >
               {STATS.map((stat) => (
                 <div key={stat.label}>
-                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">{stat.value}</div>
-                  <div className="text-dark-500 text-sm">{stat.label}</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-dark-900 dark:text-white mb-1">{stat.value}</div>
+                  <div className="text-dark-500 dark:text-dark-500 text-sm">{stat.label}</div>
                 </div>
               ))}
             </motion.div>

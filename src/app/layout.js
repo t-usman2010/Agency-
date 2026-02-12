@@ -38,13 +38,13 @@ export const metadata = {
     locale: "en_US",
     url: "https://nestweb.com",
     siteName: "NestWeb",
-    title: "NestWeb| Web Development & Design Agency",
+    title: "NestWeb | Web Development & Design Agency",
     description:
       "Boutique web development agency specializing in custom web apps, SaaS MVPs, UI/UX design, and branding.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "NestWeb| Web Development & Design Agency",
+    title: "NestWeb | Web Development & Design Agency",
     description:
       "Boutique web development agency specializing in custom web apps, SaaS MVPs, UI/UX design, and branding.",
   },
