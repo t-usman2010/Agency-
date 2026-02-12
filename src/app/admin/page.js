@@ -21,6 +21,16 @@ import {
   HiStar,
   HiCurrencyDollar,
   HiTrash,
+  HiXMark,
+  HiPhone,
+  HiGlobeAlt,
+  HiBuildingOffice2,
+  HiCalendarDays,
+  HiChatBubbleBottomCenterText,
+  HiClock,
+  HiBanknotes,
+  HiWrenchScrewdriver,
+  HiMegaphone,
 } from 'react-icons/hi2';
 
 export default function AdminDashboard() {
@@ -34,6 +44,7 @@ export default function AdminDashboard() {
   const [pricing, setPricing] = useState([]);
   const [loadingData, setLoadingData] = useState(true);
   const [activeTab, setActiveTab] = useState('leads');
+  const [selectedLead, setSelectedLead] = useState(null);
 
   useEffect(() => {
     if (!loading && !user) {
@@ -178,8 +189,8 @@ export default function AdminDashboard() {
                     {leads.map((lead) => (
                       <div
                         key={lead.id}
-                        className="bg-white rounded-xl p-5 sm:p-6 border border-dark-100 hover:shadow-md transition-shadow"
-                      >
+                        onClick={() => setSelectedLead(lead)}
+                        className="bg-white rounded-xl p-5 sm:p-6 border border-dark-100 hover:shadow-md transition-shadow cursor-pointer">
                         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-3 mb-2">
@@ -198,9 +209,9 @@ export default function AdminDashboard() {
                             </div>
                             <p className="text-dark-500 text-sm mb-1">{lead.email}</p>
                             {lead.company && <p className="text-dark-500 text-sm mb-1">{lead.company}</p>}
-                            <p className="text-dark-700 text-sm">{lead.message}</p>
+                            <p className="text-dark-700 text-sm line-clamp-2">{lead.message}</p>
                           </div>
-                          <div className="flex gap-2 shrink-0">
+                          <div className="flex gap-2 shrink-0" onClick={(e) => e.stopPropagation()}>
                             {['new', 'contacted', 'closed'].map((s) => (
                               <button
                                 key={s}
@@ -247,6 +258,166 @@ export default function AdminDashboard() {
               <PricingManager packages={pricing} onRefresh={fetchAllData} />
             )}
           </>
+        )}
+      </div>
+
+      {/* ─── Lead Detail Popup ─────────────────────────────── */}
+      {selectedLead && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedLead(null)}
+        >
+          {/* Backdrop */}
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+
+          {/* Modal */}
+          <div
+            className="relative bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className="sticky top-0 bg-white rounded-t-2xl border-b border-dark-100 px-6 py-4 flex items-center justify-between z-10">
+              <div className="flex items-center gap-3">
+                <h3 className="text-lg font-bold text-dark-900">{selectedLead.name}</h3>
+                <span
+                  className={`px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                    selectedLead.status === 'new'
+                      ? 'bg-blue-50 text-blue-700'
+                      : selectedLead.status === 'contacted'
+                      ? 'bg-yellow-50 text-yellow-700'
+                      : 'bg-green-50 text-green-700'
+                  }`}
+                >
+                  {selectedLead.status}
+                </span>
+              </div>
+              <button
+                onClick={() => setSelectedLead(null)}
+                className="p-2 rounded-lg hover:bg-dark-50 text-dark-400 hover:text-dark-700 transition-colors"
+              >
+                <HiXMark className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Body */}
+            <div className="px-6 py-5 space-y-5">
+              {/* Contact Info Grid */}
+              <div className="grid sm:grid-cols-2 gap-4">
+                <DetailItem icon={HiEnvelope} label="Email" value={selectedLead.email} isLink={`mailto:${selectedLead.email}`} />
+                <DetailItem icon={HiPhone} label="Phone" value={selectedLead.phone} isLink={selectedLead.phone ? `tel:${selectedLead.phone}` : null} />
+                <DetailItem icon={HiBuildingOffice2} label="Company" value={selectedLead.company} />
+                <DetailItem icon={HiGlobeAlt} label="Website" value={selectedLead.website} isLink={selectedLead.website} />
+              </div>
+
+              <div className="border-t border-dark-100" />
+
+              {/* Project Info Grid */}
+              <div className="grid sm:grid-cols-2 gap-4">
+                <DetailItem icon={HiWrenchScrewdriver} label="Project Type" value={selectedLead.projectType} />
+                <DetailItem icon={HiBanknotes} label="Budget" value={selectedLead.budget} />
+                <DetailItem icon={HiCalendarDays} label="Timeline" value={selectedLead.timeline} />
+                <DetailItem icon={HiMegaphone} label="Referral Source" value={selectedLead.referralSource} />
+              </div>
+
+              <div className="border-t border-dark-100" />
+
+              {/* Message */}
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <HiChatBubbleBottomCenterText className="w-4 h-4 text-dark-400" />
+                  <span className="text-xs font-medium text-dark-500 uppercase tracking-wide">Project Details</span>
+                </div>
+                <p className="text-dark-700 text-sm leading-relaxed whitespace-pre-wrap bg-dark-50 rounded-xl p-4">
+                  {selectedLead.message || '—'}
+                </p>
+              </div>
+
+              {/* Submitted At */}
+              {selectedLead.createdAt && (
+                <div className="flex items-center gap-2 text-xs text-dark-400">
+                  <HiClock className="w-3.5 h-3.5" />
+                  Submitted on{' '}
+                  {selectedLead.createdAt?.toDate
+                    ? selectedLead.createdAt.toDate().toLocaleString()
+                    : selectedLead.createdAt?.seconds
+                    ? new Date(selectedLead.createdAt.seconds * 1000).toLocaleString()
+                    : new Date(selectedLead.createdAt).toLocaleString()}
+                </div>
+              )}
+            </div>
+
+            {/* Footer Actions */}
+            <div className="sticky bottom-0 bg-white rounded-b-2xl border-t border-dark-100 px-6 py-4 flex items-center justify-between">
+              <div className="flex gap-2">
+                {['new', 'contacted', 'closed'].map((s) => (
+                  <button
+                    key={s}
+                    onClick={() => {
+                      handleStatusChange(selectedLead.id, s);
+                      setSelectedLead((prev) => ({ ...prev, status: s }));
+                    }}
+                    className={`px-4 py-2 rounded-lg text-xs font-medium transition-colors ${
+                      selectedLead.status === s
+                        ? 'bg-brand-600 text-white'
+                        : 'bg-dark-50 text-dark-600 hover:bg-dark-100'
+                    }`}
+                  >
+                    {s.charAt(0).toUpperCase() + s.slice(1)}
+                  </button>
+                ))}
+              </div>
+              <button
+                onClick={() => {
+                  handleDeleteLead(selectedLead.id);
+                  setSelectedLead(null);
+                }}
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-medium text-red-600 hover:bg-red-50 transition-colors"
+              >
+                <HiTrash className="w-4 h-4" />
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ─── Detail Item Component ────────────────────────────────── */
+function DetailItem({ icon: Icon, label, value, isLink }) {
+  if (!value) {
+    return (
+      <div className="flex items-start gap-3">
+        <div className="w-8 h-8 rounded-lg bg-dark-50 flex items-center justify-center shrink-0 mt-0.5">
+          <Icon className="w-4 h-4 text-dark-300" />
+        </div>
+        <div>
+          <p className="text-xs font-medium text-dark-400 uppercase tracking-wide">{label}</p>
+          <p className="text-sm text-dark-300 italic">Not provided</p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex items-start gap-3">
+      <div className="w-8 h-8 rounded-lg bg-brand-50 flex items-center justify-center shrink-0 mt-0.5">
+        <Icon className="w-4 h-4 text-brand-600" />
+      </div>
+      <div>
+        <p className="text-xs font-medium text-dark-400 uppercase tracking-wide">{label}</p>
+        {isLink ? (
+          <a
+            href={isLink}
+            target={isLink.startsWith('http') ? '_blank' : undefined}
+            rel={isLink.startsWith('http') ? 'noopener noreferrer' : undefined}
+            className="text-sm text-brand-600 hover:text-brand-700 font-medium hover:underline break-all"
+          >
+            {value}
+          </a>
+        ) : (
+          <p className="text-sm text-dark-800 font-medium">{value}</p>
         )}
       </div>
     </div>

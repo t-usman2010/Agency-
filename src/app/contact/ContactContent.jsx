@@ -7,10 +7,12 @@ import { submitContactForm } from '@/lib/firestore';
 import { AGENCY_EMAIL, AGENCY_PHONE, AGENCY_ADDRESS } from '@/lib/data';
 
 const BUDGETS = [
-  'Under $3,000',
-  '$3,000 – $8,000',
-  '$8,000 – $18,000',
-  '$18,000+',
+  'Under Rs 15,000',
+  'Rs 15,000 – Rs 35,000',
+  'Rs 35,000 – Rs 50,000',
+  'Rs 50,000 – Rs 70,000',
+  'Rs 70,000 – Rs 1,00,000',
+  'over Rs 1,00,000',
   'Not sure yet',
 ];
 
@@ -24,14 +26,27 @@ const PROJECT_TYPES = [
   'Other',
 ];
 
+const REFERRAL_SOURCES = [
+  'Google Search',
+  'Social Media',
+  'Referral / Word of Mouth',
+  'LinkedIn',
+  'Portfolio / Dribbble',
+  'Blog / Article',
+  'Other',
+];
+
 export default function ContactContent() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     company: '',
+    website: '',
     projectType: '',
     budget: '',
     timeline: '',
+    referralSource: '',
     message: '',
   });
   const [status, setStatus] = useState('idle'); // idle | sending | success | error
@@ -52,10 +67,13 @@ export default function ContactContent() {
       setFormData({
         name: '',
         email: '',
+        phone: '',
         company: '',
+        website: '',
         projectType: '',
         budget: '',
         timeline: '',
+        referralSource: '',
         message: '',
       });
     } catch (err) {
@@ -220,18 +238,49 @@ export default function ContactContent() {
                       </div>
                     </div>
 
+                    <div className="grid sm:grid-cols-2 gap-6">
+                      <div>
+                        <label htmlFor="phone" className="block text-sm font-medium text-dark-900 dark:text-dark-100 mb-2">
+                          Phone Number
+                        </label>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          className="input-base"
+                          placeholder="+91 98765 43210"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="company" className="block text-sm font-medium text-dark-900 dark:text-dark-100 mb-2">
+                          Company / Organization
+                        </label>
+                        <input
+                          type="text"
+                          id="company"
+                          name="company"
+                          value={formData.company}
+                          onChange={handleChange}
+                          className="input-base"
+                          placeholder="Acme Inc."
+                        />
+                      </div>
+                    </div>
+
                     <div>
-                      <label htmlFor="company" className="block text-sm font-medium text-dark-900 dark:text-dark-100 mb-2">
-                        Company / Organization
+                      <label htmlFor="website" className="block text-sm font-medium text-dark-900 dark:text-dark-100 mb-2">
+                        Website / Current URL
                       </label>
                       <input
-                        type="text"
-                        id="company"
-                        name="company"
-                        value={formData.company}
+                        type="url"
+                        id="website"
+                        name="website"
+                        value={formData.website}
                         onChange={handleChange}
                         className="input-base"
-                        placeholder="Acme Inc."
+                        placeholder="https://yourcompany.com"
                       />
                     </div>
 
@@ -277,19 +326,40 @@ export default function ContactContent() {
                       </div>
                     </div>
 
-                    <div>
-                      <label htmlFor="timeline" className="block text-sm font-medium text-dark-900 dark:text-dark-100 mb-2">
-                        Desired Timeline
-                      </label>
-                      <input
-                        type="text"
-                        id="timeline"
-                        name="timeline"
-                        value={formData.timeline}
-                        onChange={handleChange}
-                        className="input-base"
-                        placeholder="e.g., 6 weeks, Q2 2026, ASAP"
-                      />
+                    <div className="grid sm:grid-cols-2 gap-6">
+                      <div>
+                        <label htmlFor="timeline" className="block text-sm font-medium text-dark-900 dark:text-dark-100 mb-2">
+                          Desired Timeline
+                        </label>
+                        <input
+                          type="text"
+                          id="timeline"
+                          name="timeline"
+                          value={formData.timeline}
+                          onChange={handleChange}
+                          className="input-base"
+                          placeholder="e.g., 6 weeks, Q2 2026, ASAP"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="referralSource" className="block text-sm font-medium text-dark-900 dark:text-dark-100 mb-2">
+                          How did you hear about us?
+                        </label>
+                        <select
+                          id="referralSource"
+                          name="referralSource"
+                          value={formData.referralSource}
+                          onChange={handleChange}
+                          className="input-base"
+                        >
+                          <option value="">Select an option</option>
+                          {REFERRAL_SOURCES.map((source) => (
+                            <option key={source} value={source}>
+                              {source}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
                     </div>
 
                     <div>
