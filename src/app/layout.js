@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: {
-    default: "NestWeb — Web Development & Design Agency",
+    default: "NestWeb | Web Development & Design Agency",
     template: "%s | NestWeb",
   },
   description:
@@ -51,6 +51,12 @@ export const metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  icons: {
+    icon: [
+      { url: '/logo1.png', sizes: 'any' },
+    ],
+    apple: '/logo1.png',
   },
 };
 
