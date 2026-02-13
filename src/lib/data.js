@@ -7,7 +7,7 @@ import {
   HiOutlineWrenchScrewdriver,
 } from 'react-icons/hi2';
 
-export const AGENCY_NAME = 'NestWeb';
+export const AGENCY_NAME = 'Webentis';
 export const AGENCY_TAGLINE = 'CODE. CREATE. CONNECT.';
 export const AGENCY_EMAIL = 't.usman36412@gmail.com';
 export const AGENCY_PHONE = '+92 3211113360';
@@ -166,7 +166,7 @@ export const PORTFOLIO = [
       { metric: 'Client Retention', value: '+34%', description: 'After dashboard launch' },
     ],
     testimonial: {
-      text: 'NestWeb delivered exactly what we needed a fast, beautiful dashboard our clients love. The real-time capabilities exceeded our expectations.',
+      text: 'Webentis delivered exactly what we needed a fast, beautiful dashboard our clients love. The real-time capabilities exceeded our expectations.',
       author: 'James Wright',
       role: 'CTO, DataSync Inc.',
     },
@@ -214,7 +214,7 @@ export const PORTFOLIO = [
       { metric: 'Platform Uptime', value: '99.97%', description: 'Over 12-month period' },
     ],
     testimonial: {
-      text: 'NestWeb understood our vision and built a platform that scales beautifully. The student feedback has been overwhelmingly positive.',
+      text: 'Webentis understood our vision and built a platform that scales beautifully. The student feedback has been overwhelmingly positive.',
       author: 'Dr. Rajan Patel',
       role: 'CEO, NexaLearn Education',
     },
@@ -238,7 +238,7 @@ export const PORTFOLIO = [
       { metric: 'AUM Tracked', value: '$120M+', description: 'Assets under management' },
     ],
     testimonial: {
-      text: 'Security was non-negotiable for us. NestWeb built a platform that meets institutional standards while being remarkably easy to use.',
+      text: 'Security was non-negotiable for us. Webentis built a platform that meets institutional standards while being remarkably easy to use.',
       author: 'Sarah Kim',
       role: 'COO, Finova Wealth',
     },
@@ -247,13 +247,13 @@ export const PORTFOLIO = [
 
 export const TESTIMONIALS = [
   {
-    text: 'NestWeb transformed our outdated platform into a modern, high-performing application. Their attention to detail and communication throughout the project was outstanding.',
+    text: 'Webentis transformed our outdated platform into a modern, high-performing application. Their attention to detail and communication throughout the project was outstanding.',
     author: 'James Wright',
     role: 'CTO, DataSync Inc.',
     rating: 5,
   },
   {
-    text: 'Working with the NestWeb team felt like having an in-house dev team. They understood our brand instantly and delivered beyond our expectations.',
+    text: 'Working with the Webentis team felt like having an in-house dev team. They understood our brand instantly and delivered beyond our expectations.',
     author: 'Mia Torres',
     role: 'Founder, Verdant Living Co.',
     rating: 5,
@@ -265,7 +265,7 @@ export const TESTIMONIALS = [
     rating: 5,
   },
   {
-    text: 'NestWeb doesn\'t just build — they think. Their strategic input on UX helped us increase conversions by 40%.',
+    text: 'Webentis doesn\'t just build — they think. Their strategic input on UX helped us increase conversions by 40%.',
     author: 'Dr. Rajan Patel',
     role: 'CEO, NexaLearn Education',
     rating: 5,
@@ -405,7 +405,7 @@ Faster sites convert better. Google rewards speed. Users remember experiences. B
     slug: 'designing-for-conversion-ux-principles',
     title: '7 UX Principles That Actually Drive Conversion',
     excerpt:
-      'Beautiful design means nothing if it doesn\'t convert. These are the research-backed UX principles we apply to every project at NestWeb.',
+      'Beautiful design means nothing if it doesn\'t convert. These are the research-backed UX principles we apply to every project at Webentis.',
     category: 'Design',
     author: 'Elena Rossi',
     date: 'January 15, 2026',
@@ -414,7 +414,7 @@ Faster sites convert better. Google rewards speed. Users remember experiences. B
     content: `
 ## Design With Intent
 
-Every pixel should serve a purpose. At NestWeb, we don't design for awards — we design for results. Here are seven UX principles that consistently drive higher conversion rates across our projects.
+Every pixel should serve a purpose. At Webentis, we don't design for awards — we design for results. Here are seven UX principles that consistently drive higher conversion rates across our projects.
 
 ### 1. Progressive Disclosure
 
@@ -458,7 +458,7 @@ With 60%+ of web traffic on mobile, designing desktop-first is designing backwar
     content: `
 ## The Serverless Question
 
-At NestWeb, we use both Firebase and custom Node.js backends extensively. The decision isn't about which is "better" — it's about which is right for your project, budget, and timeline.
+At Webentis, we use both Firebase and custom Node.js backends extensively. The decision isn't about which is "better" — it's about which is right for your project, budget, and timeline.
 
 ### When Firebase Excels
 
@@ -512,7 +512,7 @@ We deliver design systems, not just mockups. A well-structured Figma library wit
 
 Your brand will live on your website, social media, pitch decks, product UI, and eventually physical materials. Every design decision should consider these touchpoints.
 
-## The NestWeb Approach
+## The Webentis Approach
 
 We build brands that look like they belong to companies twice your current size — without the enterprise price tag. It's about smart constraints, not unlimited options.
     `,

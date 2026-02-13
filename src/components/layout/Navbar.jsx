@@ -38,7 +38,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-2.5 group" aria-label={AGENCY_NAME}>
           <Image
             src="/logo3.png"
-            alt="NestWeb Logo"
+            alt="Webentis Logo"
             width={140}
             height={52}
             className="h-14 sm:h-16 w-auto object-contain"

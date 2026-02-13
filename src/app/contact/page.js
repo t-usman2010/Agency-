@@ -3,7 +3,7 @@ import ContactContent from './ContactContent';
 export const metadata = {
   title: 'Contact',
   description:
-    'Get in touch with NestWeb. Tell us about your project and we\'ll respond within 24 hours with a free consultation.',
+    'Get in touch with Webentis. Tell us about your project and we\'ll respond within 24 hours with a free consultation.',
 };
 
 export default function ContactPage() {

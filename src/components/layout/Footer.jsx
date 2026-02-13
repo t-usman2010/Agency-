@@ -43,7 +43,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center mb-4">
               <Image
                 src="/logo3.png"
-                alt="NestWeb Logo"
+                alt="Webentis Logo"
                 width={140}
                 height={52}
                 className="h-10 w-auto object-contain brightness-0 invert"

@@ -18,11 +18,11 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: {
-    default: "NestWeb | Web Development & Design Agency",
-    template: "%s | NestWeb",
+    default: "Webentis | Web Development & Design Agency",
+    template: "%s | Webentis",
   },
   description:
-    "NestWeb is a boutique web development agency specializing in custom web applications, SaaS MVPs, UI/UX design, and brand identity. Built by a team of MERN stack developers and a graphic designer.",
+    "Webentis is a boutique web development agency specializing in custom web applications, SaaS MVPs, UI/UX design, and brand identity. Built by a team of MERN stack developers and a graphic designer.",
   keywords: [
     "web development agency",
     "MERN stack",
@@ -32,19 +32,19 @@ export const metadata = {
     "branding",
     "custom web applications",
   ],
-  authors: [{ name: "NestWeb" }],
+  authors: [{ name: "Webentis" }],
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://nestweb.com",
-    siteName: "NestWeb",
-    title: "NestWeb | Web Development & Design Agency",
+    url: "https://Webentis.online",
+    siteName: "Webentis",
+    title: "Webentis | Web Development & Design Agency",
     description:
       "Boutique web development agency specializing in custom web apps, SaaS MVPs, UI/UX design, and branding.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "NestWeb | Web Development & Design Agency",
+    title: "Webentis | Web Development & Design Agency",
     description:
       "Boutique web development agency specializing in custom web apps, SaaS MVPs, UI/UX design, and branding.",
   },

@@ -141,7 +141,7 @@ export default function HomePage() {
         <div className="container-max">
           <AnimatedSection>
             <SectionHeader
-              label="Why NestWeb"
+              label="Why Webentis"
               title="Built different. Built to last."
               subtitle="We combine deep technical expertise with design thinking to deliver products that don't just look good they perform."
             />
