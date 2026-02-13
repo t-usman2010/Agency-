@@ -42,7 +42,7 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center mb-4">
               <Image
-                src="/logo3.png"
+                src="/logo2.png"
                 alt="Webentis Logo"
                 width={140}
                 height={52}
