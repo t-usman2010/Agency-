@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactCompiler: true,
+  trailingSlash: false,
+  skipTrailingSlashRedirect: false,
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
@@ -9,6 +11,19 @@ const nextConfig = {
         hostname: 'firebasestorage.googleapis.com',
       },
     ],
+  },
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'index, follow',
+          },
+        ],
+      },
+    ];
   },
 };
 

@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import StructuredData from "@/components/ui/StructuredData";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -17,6 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
+  metadataBase: new URL('https://webentis.online'),
   title: {
     default: "Webentis | Web Development & Design Agency",
     template: "%s | Webentis",
@@ -33,10 +35,13 @@ export const metadata = {
     "custom web applications",
   ],
   authors: [{ name: "Webentis" }],
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://Webentis.online",
+    url: "https://webentis.online",
     siteName: "Webentis",
     title: "Webentis | Web Development & Design Agency",
     description:
@@ -51,6 +56,16 @@ export const metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'verification_token',
   },
   icons: {
     icon: [
@@ -61,6 +76,37 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Webentis",
+    url: "https://webentis.online",
+    logo: "https://webentis.online/logo1.png",
+    description: "Boutique web development agency specializing in custom web applications, SaaS MVPs, UI/UX design, and brand identity.",
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "US",
+    },
+    sameAs: [],
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "Customer Service",
+      availableLanguage: ["English"],
+    },
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Webentis",
+    url: "https://webentis.online",
+    description: "Web development agency specializing in custom web applications, SaaS MVPs, and UI/UX design.",
+    publisher: {
+      "@type": "Organization",
+      name: "Webentis",
+    },
+  };
+
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
@@ -69,6 +115,8 @@ export default function RootLayout({ children }) {
             __html: `try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}`,
           }}
         />
+        <StructuredData data={organizationSchema} />
+        <StructuredData data={websiteSchema} />
       </head>
       <body
         className={`${inter.variable} ${geistMono.variable} font-sans antialiased bg-white dark:bg-dark-950 transition-colors duration-300`}
