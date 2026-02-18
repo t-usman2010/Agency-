@@ -2,7 +2,6 @@
 const nextConfig = {
   reactCompiler: true,
   trailingSlash: false,
-  skipTrailingSlashRedirect: false,
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
