@@ -2,6 +2,16 @@
 const nextConfig = {
   reactCompiler: true,
   trailingSlash: false,
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'webentis.online' }],
+        destination: 'https://www.webentis.online/:path*',
+        permanent: true,
+      },
+    ];
+  },
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [

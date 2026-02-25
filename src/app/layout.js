@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import StructuredData from "@/components/ui/StructuredData";
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({
   variable: "--font-inter",
@@ -19,7 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://webentis.online'),
+  metadataBase: new URL('https://www.webentis.online'),
   title: {
     default: "Webentis | Web Development & Design Agency",
     template: "%s | Webentis",
@@ -42,7 +43,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://webentis.online",
+    url: "https://www.webentis.online",
     siteName: "Webentis",
     title: "Webentis | Web Development & Design Agency",
     description:
@@ -81,8 +82,8 @@ export default function RootLayout({ children }) {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Webentis",
-    url: "https://webentis.online",
-    logo: "https://webentis.online/logo1.png",
+    url: "https://www.webentis.online",
+    logo: "https://www.webentis.online/logo1.png",
     description: "Boutique web development agency specializing in custom web applications, SaaS MVPs, UI/UX design, and brand identity.",
     address: {
       "@type": "PostalAddress",
@@ -100,7 +101,7 @@ export default function RootLayout({ children }) {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Webentis",
-    url: "https://webentis.online",
+    url: "https://www.webentis.online",
     description: "Web development agency specializing in custom web applications, SaaS MVPs, and UI/UX design.",
     publisher: {
       "@type": "Organization",
@@ -126,6 +127,7 @@ export default function RootLayout({ children }) {
           <Navbar />
           <main className="min-h-screen">{children}</main>
           <Footer />
+          <Analytics />
           <SpeedInsights />
         </ThemeProvider>
       </body>

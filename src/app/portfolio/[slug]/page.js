@@ -2,7 +2,7 @@ import CaseStudyContent from './CaseStudyContent';
 import { getProjectBySlug, getPortfolioProjects } from '@/lib/firestore-admin';
 import { notFound } from 'next/navigation';
 
-const SITE_URL = 'https://webentis.online';
+const SITE_URL = 'https://www.webentis.online';
 
 export async function generateStaticParams() {
   try {

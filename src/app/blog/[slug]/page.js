@@ -2,7 +2,7 @@ import BlogPostContent from './BlogPostContent';
 import { BLOG_POSTS_STATIC } from '@/lib/data';
 import { notFound } from 'next/navigation';
 
-const SITE_URL = 'https://webentis.online';
+const SITE_URL = 'https://www.webentis.online';
 
 export async function generateStaticParams() {
   return BLOG_POSTS_STATIC.map((post) => ({ slug: post.slug }));

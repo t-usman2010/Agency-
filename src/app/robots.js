@@ -7,6 +7,6 @@ export default function robots() {
         disallow: ['/admin/', '/api/'],
       },
     ],
-    sitemap: 'https://webentis.online/sitemap.xml',
+    sitemap: 'https://www.webentis.online/sitemap.xml',
   };
 }

@@ -1,6 +1,6 @@
 import PortfolioContent from './PortfolioContent';
 
-const SITE_URL = 'https://webentis.online';
+const SITE_URL = 'https://www.webentis.online';
 
 export const metadata = {
   title: 'Portfolio',

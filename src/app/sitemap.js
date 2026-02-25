@@ -1,7 +1,7 @@
 import { getPortfolioProjects } from '@/lib/firestore-admin';
 import { BLOG_POSTS_STATIC } from '@/lib/data';
 
-const SITE_URL = 'https://webentis.online';
+const SITE_URL = 'https://www.webentis.online';
 
 export default async function sitemap() {
   const currentDate = new Date().toISOString();
