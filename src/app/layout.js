@@ -38,7 +38,7 @@ export const metadata = {
   ],
   authors: [{ name: "Webentis" }],
   alternates: {
-    canonical: '/',
+    canonical: 'https://www.webentis.online',
   },
   openGraph: {
     type: "website",

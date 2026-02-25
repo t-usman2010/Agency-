@@ -4,7 +4,7 @@ export default function robots() {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/admin/', '/api/'],
+        disallow: ['/admin/', '/api/', '/favicon.ico'],
       },
     ],
     sitemap: 'https://www.webentis.online/sitemap.xml',
