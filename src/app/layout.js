@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -125,6 +126,7 @@ export default function RootLayout({ children }) {
           <Navbar />
           <main className="min-h-screen">{children}</main>
           <Footer />
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
