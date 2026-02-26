@@ -172,7 +172,7 @@ export default function CaseStudyContent({ project }) {
 
       {/* Testimonial */}
       {project?.testimonial && (
-        <section className="section-padding bg-gradient-to-br from-brand-600 to-brand-700">
+        <section className="section-padding bg-gradient-to-br from-dark-900 to-dark-800">
           <div className="container-max max-w-3xl text-center">
             <AnimatedSection>
               <div className="flex justify-center gap-1 mb-6">
@@ -183,7 +183,7 @@ export default function CaseStudyContent({ project }) {
               <blockquote className="text-xl sm:text-2xl text-white font-medium leading-relaxed mb-6">
                 &ldquo;{project.testimonial.text}&rdquo;
               </blockquote>
-              <div className="text-brand-100">
+              <div className="text-dark-300">
                 <p className="font-semibold text-white">{project.testimonial.author}</p>
                 <p className="text-sm">{project.testimonial.role}</p>
               </div>
@@ -198,8 +198,8 @@ export default function CaseStudyContent({ project }) {
           <AnimatedSection>
             <div className="relative bg-gradient-to-br from-dark-900 to-dark-800 dark:from-dark-800 dark:to-dark-900 rounded-3xl p-10 sm:p-16 text-center overflow-hidden">
               {/* Background decoration */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-brand-500/10 rounded-full blur-3xl" />
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-brand-600/10 rounded-full blur-3xl" />
+              <div className="absolute top-0 right-0 w-64 h-64 bg-dark-700/30 rounded-full blur-3xl" />
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-dark-800/30 rounded-full blur-3xl" />
               <div className="relative">
                 <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">Want similar results?</h2>
                 <p className="text-dark-300 max-w-xl mx-auto mb-8 text-lg">

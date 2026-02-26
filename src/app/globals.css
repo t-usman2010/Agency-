@@ -25,10 +25,10 @@
   }
 
   ::selection {
-    @apply bg-brand-500/20 text-brand-900;
+    @apply bg-dark-900/15 text-dark-900;
   }
   .dark ::selection {
-    @apply bg-brand-400/30 text-brand-200;
+    @apply bg-white/20 text-white;
   }
 }
 
@@ -42,7 +42,7 @@
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-500 via-brand-400 to-brand-300;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-dark-900 via-brand-600 to-brand-400;
   }
 
   .btn-primary {

@@ -67,7 +67,7 @@ export default function AboutContent() {
               </p>
             </AnimatedSection>
             <AnimatedSection variant="fadeRight">
-              <div className="bg-gradient-to-br from-brand-600 to-brand-800 rounded-2xl p-8 sm:p-10 text-white">
+              <div className="bg-gradient-to-br from-dark-900 to-dark-800 rounded-2xl p-8 sm:p-10 text-white">
                 <h3 className="text-2xl font-bold mb-6">Our Values</h3>
                 <ul className="space-y-4">
                   {[
@@ -89,10 +89,10 @@ export default function AboutContent() {
                     },
                   ].map((value) => (
                     <li key={value.title} className="flex gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-brand-300 mt-2 shrink-0" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-dark-500 mt-2 shrink-0" />
                       <div>
                         <span className="font-semibold">{value.title}:</span>{' '}
-                        <span className="text-brand-100">{value.desc}</span>
+                        <span className="text-dark-300">{value.desc}</span>
                       </div>
                     </li>
                   ))}
@@ -209,8 +209,8 @@ export default function AboutContent() {
                 <StaggerItem key={member.id || member.name}>
                   <div className="bg-white dark:bg-dark-900 rounded-2xl border border-dark-100 dark:border-dark-800 shadow-sm dark:shadow-none transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 dark:hover:shadow-dark-950/50 dark:hover:border-dark-700 overflow-hidden">
                     {/* Avatar Placeholder */}
-                    <div className="aspect-[4/3] bg-gradient-to-br from-brand-100 via-brand-50 to-dark-50 dark:from-brand-950/30 dark:via-dark-800 dark:to-dark-900 flex items-center justify-center">
-                      <div className="w-24 h-24 rounded-full bg-brand-600 flex items-center justify-center text-white text-3xl font-bold">
+                    <div className="aspect-[4/3] bg-gradient-to-br from-dark-100 via-dark-50 to-white dark:from-dark-800 dark:via-dark-850 dark:to-dark-900 flex items-center justify-center">
+                      <div className="w-24 h-24 rounded-full bg-dark-900 dark:bg-white flex items-center justify-center text-white dark:text-dark-900 text-3xl font-bold">
                         {member.name
                           .split(' ')
                           .map((n) => n[0])

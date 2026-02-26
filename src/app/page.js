@@ -84,7 +84,7 @@ export default function HomePage() {
               We build digital
               <br />
               products that{' '}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-brand-500 dark:from-brand-400 dark:to-brand-300">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-dark-900 to-brand-500 dark:from-white dark:to-brand-400">
                 drive growth
               </span>
             </motion.h1>
@@ -275,10 +275,10 @@ export default function HomePage() {
       </section>
 
       {/* ─── LIMITED OFFER ────────────────────────────────────── */}
-      <section className="section-padding bg-brand-600 relative overflow-hidden">
+      <section className="section-padding bg-dark-900 relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-500/50 rounded-full blur-[128px]" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-700/50 rounded-full blur-[128px]" />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-dark-800/50 rounded-full blur-[128px]" />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-dark-950/50 rounded-full blur-[128px]" />
         </div>
         <div className="container-max relative z-10 text-center">
           <AnimatedSection>
@@ -289,7 +289,7 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 text-balance">
               20% off your first project this quarter
             </h2>
-            <p className="text-brand-100 text-lg max-w-xl mx-auto mb-8">
+            <p className="text-dark-300 text-lg max-w-xl mx-auto mb-8">
               Book a discovery call before March 31, 2026 and receive 20% off any package.
               Only 2 spots remaining for Q1.
             </p>
@@ -375,7 +375,7 @@ export default function HomePage() {
             ].map((item) => (
               <StaggerItem key={item.step}>
                 <div className="text-center">
-                  <div className="text-5xl font-bold text-brand-100 dark:text-brand-900 mb-4">{item.step}</div>
+                  <div className="text-5xl font-bold text-dark-200 dark:text-dark-800 mb-4">{item.step}</div>
                   <h3 className="text-xl font-bold text-dark-900 dark:text-white mb-2">{item.title}</h3>
                   <p className="text-dark-500 dark:text-dark-400 text-sm leading-relaxed">{item.description}</p>
                 </div>

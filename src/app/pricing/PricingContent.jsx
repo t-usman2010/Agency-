@@ -49,7 +49,7 @@ export default function PricingContent() {
       <section className="px-4 sm:px-6 lg:px-8 pb-8">
         <div className="container-max">
           <AnimatedSection>
-            <div className="bg-gradient-to-r from-brand-600 to-brand-700 rounded-2xl p-6 sm:p-8 text-center text-white">
+            <div className="bg-gradient-to-r from-dark-900 to-dark-800 rounded-2xl p-6 sm:p-8 text-center text-white">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-sm mb-3">
                 <HiSparkles className="w-4 h-4" />
                 Q1 2026 Offer
@@ -57,7 +57,7 @@ export default function PricingContent() {
               <h3 className="text-xl sm:text-2xl font-bold mb-2">
                 20% off any package booked before March 31, 2026
               </h3>
-              <p className="text-brand-100 text-sm">Only 2 project slots remaining this quarter.</p>
+              <p className="text-dark-300 text-sm">Only 2 project slots remaining this quarter.</p>
             </div>
           </AnimatedSection>
         </div>
