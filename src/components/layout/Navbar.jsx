@@ -37,11 +37,19 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 group" aria-label={AGENCY_NAME}>
           <Image
-            src="/logo2.png"
+            src="/light_logo.png"
             alt="Webentis Logo"
             width={140}
             height={52}
-            className="h-14 sm:h-16 w-auto object-contain"
+            className="h-14 sm:h-16 w-auto object-contain dark:hidden"
+            priority
+          />
+          <Image
+            src="/dark_logo.png"
+            alt="Webentis Logo"
+            width={140}
+            height={52}
+            className="h-14 sm:h-16 w-auto object-contain hidden dark:block"
             priority
           />
         </Link>

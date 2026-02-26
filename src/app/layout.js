@@ -71,9 +71,9 @@ export const metadata = {
   },
   icons: {
     icon: [
-      { url: '/logo1.png', sizes: 'any' },
+      { url: '/tab%20logo.png', sizes: 'any' },
     ],
-    apple: '/logo1.png',
+    apple: '/tab%20logo.png',
   },
 };
 
@@ -83,7 +83,7 @@ export default function RootLayout({ children }) {
     "@type": "Organization",
     name: "Webentis",
     url: "https://www.webentis.online",
-    logo: "https://www.webentis.online/logo1.png",
+    logo: "https://www.webentis.online/tab%20logo.png",
     description: "Boutique web development agency specializing in custom web applications, SaaS MVPs, UI/UX design, and brand identity.",
     address: {
       "@type": "PostalAddress",

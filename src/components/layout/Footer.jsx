@@ -42,11 +42,11 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center mb-4">
               <Image
-                src="/logo2.png"
+                src="/dark_logo.png"
                 alt="Webentis Logo"
                 width={140}
                 height={52}
-                className="h-10 w-auto object-contain brightness-0 invert"
+                className="h-10 w-auto object-contain"
               />
             </Link>
             <p className="text-dark-400 text-sm leading-relaxed mb-4">
