@@ -70,7 +70,7 @@ export default async function sitemap() {
   // Get blog posts
   const blogRoutes = BLOG_POSTS_STATIC.map((post) => ({
     url: `${SITE_URL}/blog/${post.slug}`,
-    lastModified: post.date || currentDate,
+    lastModified: post.date ? new Date(post.date).toISOString() : currentDate,
     changeFrequency: 'monthly',
     priority: 0.6,
   }));
